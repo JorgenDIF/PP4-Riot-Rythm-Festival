@@ -9,6 +9,8 @@ dj-database-url==2.1.0
 Django==5.0.4
 django-allauth==0.61.1
 django-crispy-forms==2.1
+django-resized==1.0.2
+django-richtextfield==1.6.2
 gunicorn==22.0.0
 idna==3.7
 oauthlib==3.2.2
