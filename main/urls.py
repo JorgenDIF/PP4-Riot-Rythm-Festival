@@ -1,6 +1,5 @@
 """
 URL configuration for main project.
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
 Examples:
@@ -16,10 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('djrichtextfield/', include('djrichtextfield.urls')),
     path('', include('home.urls')),
+    path('bands/', include('bands.urls')),
 ]

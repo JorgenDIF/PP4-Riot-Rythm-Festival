@@ -21,6 +21,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Info</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link {% if url_name == 'add_band' %}active {% endif %}" href="{% url 'add_band' %}">Add Band</a>
+              </li>
               {% if request.user.is_authenticated %}
               <li class="nav-item">
                 <a class="nav-link {% if url_name == 'accounts_logout' %}active {% endif %}" href="/accounts/logout/">Logout</a>

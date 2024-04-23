@@ -9,7 +9,6 @@ class BandsForm(forms.ModelForm):
         fields = ['band_name',
                   'description', 'genre_choices', 'image', 'image_alt', ]
 
-
     description = forms.CharField(widget=RichTextWidget())
 
     widget = {
@@ -21,4 +20,5 @@ class BandsForm(forms.ModelForm):
         'description': 'Description',
         'genre_choices': 'Genre',
         'image': 'Image',
-        'image_alt': 'Image Alt',
+        'image_alt': 'Image Alt'
+    }
