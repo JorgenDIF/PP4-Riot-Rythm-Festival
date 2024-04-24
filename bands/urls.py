@@ -3,5 +3,5 @@ from .views import AddBand, Bands
 
 urlpatterns = [
     path('', AddBand.as_view(), name='add_band'),
-    path('band_suggestions/', Bands.as_view(), name='band.suggestions'),
+    path('band_bank/', Bands.as_view(), name='band.bank'),
 ]

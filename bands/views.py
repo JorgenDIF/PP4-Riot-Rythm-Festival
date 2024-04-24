@@ -8,7 +8,7 @@ from .forms import BandsForm
 
 class Bands(ListView):
     """_View all bands_"""
-    template_name = 'bands/band_suggestions.html'
+    template_name = 'bands/band_bank.html'
     model = Band
     context_object_name = 'bands'
     ordering = ['band_name']
