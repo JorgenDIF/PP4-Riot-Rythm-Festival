@@ -69,18 +69,33 @@ a.nav-link {
 
 img.logo {
     width: 15.75rem;
-
 }
 
 .active {
     border-bottom: 2px solid var(--blue);
     font-weight: 500;
 }
+/* Form */
 
 .form {
     width: 100%;
     margin: 3% auto;
     box-shadow: var(--small-box-shadow);
     border-radius: 5px;
+}
 
+/* Bands */
+
+.card {
+    height: 90%;
+    margin-top: 1rem;
+}
+
+.bands {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.bands:hover {
+    cursor: pointer;
 }

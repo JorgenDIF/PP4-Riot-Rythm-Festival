@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+{% block title%}Band Suggestions{% endblock %}
+
+{% block content %}
+
+<div class="container d-flex flex-row flex-wrap justify_content-center">
+    <h1 class="text-center p-2">
+        Band Suggestions
+    </h1>
+
+    {% for band in bands %}
+    <a href="" class="bands" aria-label="Click to view {{band.title}}">
+        <div class="card m-3" style="width: 18rem;">
+            <img src="{{band.image.url}}" class="card-img-top" alt="{{band.image.alt}}">
+            <div class="card-body">
+              <h2 class="card-title">{{band.title}}</h2>
+              <p class="card-text">{{band.description|truncatechars:100}}</p>
+            </div>
+          </div>
+    </a>
+    {% endfor %}
+</div>
+
+    {% endblock %}

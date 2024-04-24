@@ -1,9 +1,17 @@
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Band
 from .forms import BandsForm
+
+
+class Bands(ListView):
+    """_View all bands_"""
+    template_name = 'bands/band_suggestions.html'
+    model = Band
+    context_object_name = 'bands'
+    ordering = ['band_name']
 
 
 class AddBand(LoginRequiredMixin, CreateView):
