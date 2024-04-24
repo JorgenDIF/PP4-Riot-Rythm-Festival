@@ -21,6 +21,11 @@ GENRE_CHOICES = (
 
 
 class Band(models.Model):
+    """
+    A model representing a band with inspiration from the Macs YouTube video.
+    Link to video is in the README.md file.
+    """
+
     band_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     band_name = models.CharField(max_length=255)
@@ -53,3 +58,31 @@ class Band(models.Model):
 
     def __str__(self):
         return self.band_name
+
+
+"""
+A model representing a band_request with inspiration from the Macs YouTube
+video. Link to video is in the README.md file.
+
+"""
+
+
+class BandRequest(models.Model):
+    request_id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    band = models.ForeignKey(Band, on_delete=models.CASCADE)
+    motivation = models.CharField(max_length=255)
+    request_date = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(max_length=255, unique=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.band.band_name + "-" + str
+                                (self.request_id))
+        super(BandRequest, self).save(*args, **kwargs)
+
+    class Meta:
+        ordering = ['request_date']
+
+    def __str__(self):
+        return f"Request {self.request_id} for {self.band.band_name}"
