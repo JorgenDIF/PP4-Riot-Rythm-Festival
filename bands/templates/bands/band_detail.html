@@ -1,10 +1,28 @@
 {% extends "base.html" %}
 
-{% block title %}{{ band.band_name }}{% endblock %}
+{% block title %}{Band Detail - {band.band_name }}{% endblock %}
 
 {% block content %}
-    <h1>{{ band.band_name }}</h1>
-    <img src="{{ band.image.url }}" alt="{{ band.image_alt }}">
-    <p>{{ band.genre_choices }}</p>
-    <p>{{ band.description }}</p>
+<div class="contaner">
+    <div class="band-info m-3 p-1">
+        <div class="band-img">
+            <img src="{{ band.image.url }}" alt="{{ band.image_alt }}">
+
+        </div>
+        <div class="band-details">
+            <h1 class ="text-center mt-2">{{ band.band_name }}</h1>
+            <p class="text-center"><strong>{{ band.genre_choices }}</strong></p>
+            <p class="text-center">DD Date: {{ band.dd_date }}</p>
+            <p>{{ band.description|striptags }}</p>
+
+            {% if request.user.is_superuser %}
+            <div class="text-center">
+                <a href="" class="btn btn-primary w-25">Edit</a>
+                <a href="" class="btn btn-primary w-25">Delete</a>
+            </div>
+            {% endif %}
+    </div>
+</div>
+
 {% endblock %}
+

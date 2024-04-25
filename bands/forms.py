@@ -11,23 +11,23 @@ class BandsForm(forms.ModelForm):
     such as the band name,
     description, genre choices, image, and image alt text.
     """
+
     class Meta:
         model = Band
-        fields = ['band_name', 'description', 'genre_choices', 'image',
-                  'image_alt']
+        fields = ["band_name", "description", "genre_choices", "image", "image_alt"]
 
     description = forms.CharField(widget=RichTextWidget())
 
     widgets = {
-        'description': forms.Textarea(attrs={'rows': 5}),
+        "description": forms.Textarea(attrs={"rows": 5}),
     }
 
     labels = {
-        'band_name': 'Band Name',
-        'description': 'Description',
-        'genre_choices': 'Genre',
-        'image': 'Image',
-        'image_alt': 'Image Alt'
+        "band_name": "Band Name",
+        "description": "Description",
+        "genre_choices": "Genre",
+        "image": "Image",
+        "image_alt": "Image Alt",
     }
 
 
@@ -41,15 +41,12 @@ class BandRequestForm(forms.ModelForm):
 
     class Meta:
         model = BandRequest
-        fields = ['motivation']
+        fields = ["motivation"]
 
     motivation = forms.CharField(
         widget=forms.Textarea(
-            attrs={'rows': 3, 'placeholder':
-                   'Why do you want this band to perform?'}
+            attrs={"rows": 3, "placeholder": "Why do you want this band to perform?"}
         )
     )
 
-    labels = {
-        'motivation': 'Motivation'
-    }
+    labels = {"motivation": "Motivation"}

@@ -7,10 +7,11 @@ from django.shortcuts import redirect
 
 class Bands(ListView):
     """_View all bands_"""
-    template_name = 'bands/band_bank.html'
+
+    template_name = "bands/band_bank.html"
     model = Band
-    context_object_name = 'bands'
-    ordering = ['band_name']
+    context_object_name = "bands"
+    ordering = ["band_name"]
 
 
 class AddBand(LoginRequiredMixin, CreateView):
@@ -19,10 +20,11 @@ class AddBand(LoginRequiredMixin, CreateView):
 
     Inherits from LoginRequiredMixin and CreateView.
     """
-    template_name = 'bands/add_band.html'
+
+    template_name = "bands/add_band.html"
     model = Band
     form_class = BandsForm
-    success_url = '/bands/'
+    success_url = "/bands/"
 
     def form_valid(self, form):
         """
@@ -32,7 +34,7 @@ class AddBand(LoginRequiredMixin, CreateView):
         Sets the user field of the band instance to the current user.
         """
         if not self.request.user.is_superuser:
-            return redirect('home')
+            return redirect("home")
         form.instance.user = self.request.user
         return super(AddBand, self).form_valid(form)
 
@@ -43,10 +45,11 @@ class AddBandRequest(LoginRequiredMixin, CreateView):
 
     Inherits from LoginRequiredMixin and CreateView.
     """
-    template_name = 'bands/add_band_request.html'
+
+    template_name = "bands/add_band_request.html"
     model = BandRequest
     form_class = BandRequestForm
-    success_url = '/bands/'
+    success_url = "/bands/"
 
     def form_valid(self, form):
         """
@@ -64,7 +67,8 @@ class BandDetail(LoginRequiredMixin, DetailView):
 
     Inherits from LoginRequiredMixin and DetailView.
     """
-    template_name = 'bands/band_detail.html'
+
+    template_name = "bands/band_detail.html"
     model = Band
-    context_object_name = 'band'
-    slug_url_kwarg = 'slug'
+    context_object_name = "band"
+    slug_url_kwarg = "slug"

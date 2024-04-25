@@ -99,3 +99,33 @@ img.logo {
 .bands:hover {
     cursor: pointer;
 }
+
+.band-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.band-details {
+    width: 100%;
+}
+
+.band-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and  (min-width: 62.5em) {
+    .band-img {
+       width: 40%;
+       margin: 0 auto;
+    }
+
+    .band-details {
+        width: 60%;
+    }
+
+}

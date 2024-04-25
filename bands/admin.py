@@ -5,8 +5,8 @@ from .models import Band
 @admin.register(Band)
 class BandAdmin(admin.ModelAdmin):
     list_display = (
-        'band_name',
-        'genre_choices',
-        'image',
+        "band_name",
+        "genre_choices",
+        "image",
     )
-    list_filter = ('genre_choices',)
+    list_filter = ("genre_choices",)
