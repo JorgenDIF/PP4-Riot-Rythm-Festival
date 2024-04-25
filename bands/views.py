@@ -1,7 +1,11 @@
-from django.views.generic import CreateView, ListView, DetailView
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import CreateView, ListView, DetailView, DeleteView
+from django.contrib.auth.mixins import (
+    UserPassesTestMixin, LoginRequiredMixin
+)
+
 from .models import Band, BandRequest
 from .forms import BandsForm, BandRequestForm
+
 from django.shortcuts import redirect
 
 
@@ -72,3 +76,16 @@ class BandDetail(LoginRequiredMixin, DetailView):
     model = Band
     context_object_name = "band"
     slug_url_kwarg = "slug"
+
+
+class DeleteBand(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """
+    View for deleting a band.
+
+    Inherits from LoginRequiredMixin and DeleteView.
+    """
+    model = Band
+    success_url = "/bands/"
+
+    def test_func(self):
+        return self.request.user.is_superuser
