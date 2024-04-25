@@ -17,8 +17,8 @@
 
             {% if request.user.is_superuser %}
             <div class="text-center">
-                <a href="" class="btn btn-primary w-25">Edit</a>
-                <a href="" class="btn btn-primary w-25">Delete</a>
+                <a href="{% url 'edit_band' band.slug %}" class="btn btn-primary w-25">Edit</a>
+                <a href="{% url 'delete_band' band.slug %}" class="btn btn-primary w-25">Delete</a>
             </div>
             {% endif %}
     </div>

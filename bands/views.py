@@ -1,4 +1,8 @@
-from django.views.generic import CreateView, ListView, DetailView, DeleteView
+from django.views.generic import (
+    CreateView, ListView,
+    DetailView, DeleteView,
+    UpdateView
+)
 from django.contrib.auth.mixins import (
     UserPassesTestMixin, LoginRequiredMixin
 )
@@ -76,6 +80,22 @@ class BandDetail(LoginRequiredMixin, DetailView):
     model = Band
     context_object_name = "band"
     slug_url_kwarg = "slug"
+
+
+class EditBand(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """
+    View for editing a band.
+
+    Inherits from LoginRequiredMixin and UpdateView.
+    """
+
+    template_name = "bands/edit_band.html"
+    model = Band
+    form_class = BandsForm
+    success_url = "/bands/"
+
+    def test_func(self):
+        return self.request.user.is_superuser
 
 
 class DeleteBand(LoginRequiredMixin, UserPassesTestMixin, DeleteView):

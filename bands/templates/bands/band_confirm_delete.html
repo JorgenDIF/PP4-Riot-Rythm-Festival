@@ -1,4 +1,4 @@
-{% {% extends "base.html" %}%}
+{% extends "base.html" %}
 
 {% block title %}Delete Band {{ object.title }}{% endblock %}
 
@@ -9,7 +9,7 @@
     <form method="post" class="text-center">
         {% csrf_token %}
         <p>Are you sure you want to delete <strong>{{ object.title }}</strong>?</p>
-        <input type="submit" value="Confirm" class=" brn brn-primary w-25"> 
+        <input type="submit" value="Confirm" class=" brn brn-primary w-25">
     </form>
 
 </div>
