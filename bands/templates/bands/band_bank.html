@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 
-
 {% block title%}Band Bank{% endblock %}
 
 {% block content %}
@@ -9,20 +8,17 @@
 </h1>
 
 <div class="container d-flex flex-row flex-wrap justify_content-center">
-
-
     {% for band in bands %}
-    <a href="" class="bands" aria-label="Click to view {{band.band_name}}">
-        <div class="card m-3" style="width: 18rem;">
-            <img src="{{band.image.url}}" class="card-img-top" alt="{{band.image.alt}}">
-            <div class="card-body">
-              <h2 class="card-title">{{band.band_name}}</h2>
-                <p class="card-text">{{band.genre_choices}}</p>
-              <p class="card-text">{{band.description|striptags|truncatechars:100}}</p>
+        <a href="{% url 'band_detail' band.slug %}" class="bands" aria-label="Click to view {{ band.band_name }}">
+            <div class="card m-3" style="width: 18rem;">
+                <img src="{{ band.image.url }}" class="card-img-top" alt="{{ band.image_alt }}">
+                <div class="card-body">
+                    <h2 class="card-title">{{ band.band_name }}</h2>
+                    <p class="card-text">{{ band.genre_choices }}</p>
+                    <p class="card-text">{{ band.description|striptags|truncatechars:100 }}</p>
+                </div>
             </div>
-          </div>
-    </a>
+        </a>
     {% endfor %}
 </div>
-
-    {% endblock %}
+{% endblock %}

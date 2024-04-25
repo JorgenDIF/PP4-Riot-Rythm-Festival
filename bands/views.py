@@ -1,11 +1,7 @@
-
-from django.views.generic import CreateView, ListView
-
+from django.views.generic import CreateView, ListView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
-
-from .models import Band
-from .forms import BandsForm
-
+from .models import Band, BandRequest
+from .forms import BandsForm, BandRequestForm
 from django.shortcuts import redirect
 
 
@@ -23,7 +19,6 @@ class AddBand(LoginRequiredMixin, CreateView):
 
     Inherits from LoginRequiredMixin and CreateView.
     """
-
     template_name = 'bands/add_band.html'
     model = Band
     form_class = BandsForm
@@ -40,3 +35,36 @@ class AddBand(LoginRequiredMixin, CreateView):
             return redirect('home')
         form.instance.user = self.request.user
         return super(AddBand, self).form_valid(form)
+
+
+class AddBandRequest(LoginRequiredMixin, CreateView):
+    """
+    View for adding a new band request.
+
+    Inherits from LoginRequiredMixin and CreateView.
+    """
+    template_name = 'bands/add_band_request.html'
+    model = BandRequest
+    form_class = BandRequestForm
+    success_url = '/bands/'
+
+    def form_valid(self, form):
+        """
+        Validates the form data and saves the band request.
+
+        Sets the user field of the band request instance to the current user.
+        """
+        form.instance.user = self.request.user
+        return super(AddBandRequest, self).form_valid(form)
+
+
+class BandDetail(LoginRequiredMixin, DetailView):
+    """
+    View for viewing a specific band.
+
+    Inherits from LoginRequiredMixin and DetailView.
+    """
+    template_name = 'bands/band_detail.html'
+    model = Band
+    context_object_name = 'band'
+    slug_url_kwarg = 'slug'
