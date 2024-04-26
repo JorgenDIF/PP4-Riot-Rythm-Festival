@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Band Request Detail - {{ bandrequest.band_name }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="band-info m-3 p-1">
+        <div class="band-img">
+            <img src="{{ bandrequest.image.url }}" alt="{{ bandrequest.image_alt }}">
+        </div>
+        <div class="band-details">
+            <h1 class="text-center mt-2">{{ bandrequest.band_name }}</h1>
+            <p class="text-center"><strong>{{ bandrequest.genre_choices }}</strong></p>
+            <p class="text-center">DD Date: {{ bandrequest.dd_date }}</p>
+            <p>{{ bandrequest.description|striptags }}</p>
+
+            {% if request.user.is_superuser %}
+            <div class="text-center">
+                <a href="{% url 'edit_band' bandrequest.pk %}" class="btn btn-primary w-25">Edit</a>
+                <a href="{% url 'delete_band' bandrequest.pk %}" class="btn btn-primary w-25">Delete</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
