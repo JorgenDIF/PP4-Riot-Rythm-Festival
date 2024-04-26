@@ -15,14 +15,17 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="BandRequest",
             fields=[
-                ("request_id", models.AutoField(primary_key=True, serialize=False)),
+                ("request_id", models.AutoField
+                 (primary_key=True, serialize=False)),
                 ("motivation", models.CharField(max_length=255)),
                 ("request_date", models.DateTimeField(auto_now_add=True)),
-                ("slug", models.SlugField(blank=True, max_length=255, unique=True)),
+                ("slug", models.SlugField
+                 (blank=True, max_length=255, unique=True)),
                 (
                     "band",
                     models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE, to="bands.band"
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="bands.band"
                     ),
                 ),
                 (

@@ -18,7 +18,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="Band",
             fields=[
-                ("band_id", models.AutoField(primary_key=True, serialize=False)),
+                ("band_id", models.AutoField
+                 (primary_key=True, serialize=False)),
                 ("band_name", models.CharField(max_length=255)),
                 (
                     "genre_choices",
@@ -52,9 +53,11 @@ class Migration(migrations.Migration):
                     ),
                 ),
                 ("image_alt", models.CharField(max_length=255)),
-                ("description", djrichtextfield.models.RichTextField(max_length=5000)),
+                ("description", djrichtextfield.models.RichTextField
+                 (max_length=5000)),
                 ("request_date", models.DateTimeField(auto_now_add=True)),
-                ("slug", models.SlugField(blank=True, max_length=255, unique=True)),
+                ("slug", models.SlugField
+                 (blank=True, max_length=255, unique=True)),
                 (
                     "user",
                     models.ForeignKey(

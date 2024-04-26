@@ -28,6 +28,9 @@
               {% endif %}
               {% if request.user.is_authenticated %}
               <li class="nav-item">
+                <a class="nav-link {% if url_name == 'request_band' %}active {% endif %}" href="{% url 'request_band' %}">Request Band</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link {% if url_name == 'accounts_logout' %}active {% endif %}" href="/accounts/logout/">Logout</a>
               {% else %}
             </li>

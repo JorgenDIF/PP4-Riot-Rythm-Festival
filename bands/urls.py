@@ -11,7 +11,7 @@ from .views import (
 urlpatterns = [
     path("", AddBand.as_view(), name="add_band"),
     path("band_bank/", Bands.as_view(), name="band_bank"),
-    path("request_band/<slug:slug>/",
+    path("request_band/",
          AddBandRequest.as_view(), name="request_band"),
     path("bands/<slug:slug>/", BandDetail.as_view(), name="band_detail"),
     path("bands/<slug:slug>/delete/", DeleteBand.as_view(),
