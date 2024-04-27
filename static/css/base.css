@@ -1,4 +1,5 @@
 
+
 :root {
     /** Fonts */
     --title: 'arial';
@@ -26,6 +27,7 @@ html, body {
 }
 
 body {
+
     display: flex;
     flex-direction: column;
     font-family: var(--main-font);
@@ -37,6 +39,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 main {
+    background-image: url('/static/images/rrbackground50.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     flex: 1 0 auto;
     background-color: var(--white);
 }
@@ -81,6 +87,7 @@ img.logo {
 .form {
     width: 100%;
     margin: 3% auto;
+    background-color: var(--off-white);
     box-shadow: var(--small-box-shadow);
     border-radius: 5px;
 }
