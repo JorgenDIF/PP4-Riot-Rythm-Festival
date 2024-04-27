@@ -12,7 +12,11 @@ class Profiles(TemplateView):
 
     def get_context_data(self, **kwarg):
         profile = Profile.objects.get(user=self.kwargs["pk"])
-        context = {"profile": profile}
+        context = {
+            "profile": profile,
+            "form": ProfileForm(instance=profile)
+
+        }
 
         return context
 
@@ -23,9 +27,12 @@ class EditProfile(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     form_class = ProfileForm
     model = Profile
 
+    def get_template_names(self):
+        return ['profiles/profile.html']
+
     def form_valid(self, form):
-        self.success_url = f'/profile/view/{self.kwargs["pk"]}'
+        self.success_url = f'/profiles/user/{self.kwargs["pk"]}'
         return super().form_valid(form)
 
     def test_func(self):
-        return self.request.user.id == self.get_object().user
+        return self.request.user.id == self.get_object().user.id
