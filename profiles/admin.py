@@ -4,10 +4,10 @@ from .models import Profile
 
 class ProfileAdmin(admin.ModelAdmin):
     list_display = (
-        'pk',
-        'user',
-        'bio',
-        'image',
+        "pk",
+        "user",
+        "bio",
+        "image",
     )
 
 
