@@ -119,7 +119,7 @@ img.logo {
     align-items: center;
 }
 
-@media screen and  (min-width: 62.5em) {
+/*@media screen and  (min-width: 62.5em) {
     .band-img {
        width: 40%;
        margin: 0 auto;
@@ -129,4 +129,49 @@ img.logo {
         width: 60%;
     }
 
+/* Profiles */
+
+.profile.img {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.profile.img img {
+    width: 100%;
+    border-radius: 8px;
+
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+.info {
+    width: 100%;
+    text-align: center;
+}
+
+@media screen and (min-width:40em) {
+    .form {
+        width: 50%;
+    }
+
+    .img-container {
+        flex-direction: row;
+        width: 29%;
+    }
+}
+
+@media screen and (min-width: 62.5em) {
+    .profile {
+        flex-direction: row;
+    }
+
+    .info {
+        width: 30%;
+    }
 }
