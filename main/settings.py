@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     # Apps
     'home',
     'bands',
+    'profiles',
 
     # Other
     'crispy_forms',

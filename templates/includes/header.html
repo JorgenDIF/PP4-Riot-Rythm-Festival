@@ -19,7 +19,7 @@
                 <a class="nav-link {% if url_name == 'band_bank' %}active{% endif %}" href="{% url 'band_bank' %}">Band Bank</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {% if url_name == 'band_bank' %}active{% endif %}" href="{% url 'band_requests' %}">Band Bank</a>
+                <a class="nav-link {% if url_name == 'band_requests' %}active{% endif %}" href="{% url 'band_requests' %}">Band Requests</a>
               </li>
               {% if request.user.is_superuser %}
               <li class="nav-item">
@@ -31,9 +31,14 @@
                 <a class="nav-link {% if url_name == 'request_band' %}active {% endif %}" href="{% url 'request_band' %}">Request Band</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link {% if url_name == 'profile' %}active {% endif %}" href="{% url 'profile' request.user.id %}">Profile</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link {% if url_name == 'accounts_logout' %}active {% endif %}" href="/accounts/logout/">Logout</a>
-              {% else %}
-            </li>
+              </li>
+
+               {% else %}
+
               <li class="nav-item">
                 <a class="nav-link {% if url_name == 'accounts_signup' %}active {% endif %}" href="/accounts/signup/">Register</a>
               </li>
