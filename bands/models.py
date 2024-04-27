@@ -75,7 +75,8 @@ class BandRequest(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.band.band_name + "-" + str(self.request_id))
+            self.slug = slugify(self.band.band_name + "-"
+                                + str(self.request_id))
         super(BandRequest, self).save(*args, **kwargs)
 
     class Meta:

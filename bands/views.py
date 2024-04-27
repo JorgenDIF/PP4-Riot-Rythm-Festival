@@ -146,5 +146,3 @@ class BandRequests(LoginRequiredMixin, ListView):
     model = BandRequest
     context_object_name = "bandrequests"
     ordering = ["-request_date"]
-
-
