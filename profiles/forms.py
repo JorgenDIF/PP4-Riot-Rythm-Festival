@@ -8,7 +8,6 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ("image", "bio")
-
         labels = {
             "image": "Avatar",
             "bio": "Bio",
