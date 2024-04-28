@@ -79,6 +79,7 @@ class BandDetail(LoginRequiredMixin, DetailView):
     template_name = "bands/band_detail.html"
     model = Band
     context_object_name = "band"
+    slug_url_kwarg = 'slug'
 
 
 class EditBand(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
@@ -129,6 +130,7 @@ class ConfirmDeleteBandRequest(LoginRequiredMixin, UserPassesTestMixin,
     """
     model = BandRequest
     template_name = "bands/confirm_delete_band_request.html"
+    success_url = "/bands/"
 
     def test_func(self):
         band_request = self.get_object()
@@ -146,3 +148,42 @@ class BandRequests(LoginRequiredMixin, ListView):
     model = BandRequest
     context_object_name = "bandrequests"
     ordering = ["-request_date"]
+
+
+class EditBandRequest(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """
+    View for editing a band request.
+
+    Inherits from LoginRequiredMixin and UpdateView.
+    """
+
+    template_name = "bands/edit_band_request.html"
+    model = BandRequest
+    form_class = BandRequestForm
+    success_url = "/bands/"
+
+    def test_func(self):
+        band_request = self.get_object()
+        return (
+            self.request.user == band_request.user
+            or self.request.user.is_superuser
+        )
+
+
+class DeleteBandRequest(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """
+    View for deleting a band request.
+
+    Inherits from LoginRequiredMixin and DeleteView.
+    """
+
+    template_name = "bands/delete_band_request.html"
+    model = BandRequest
+    success_url = "/bands/"
+
+    def test_func(self):
+        band_request = self.get_object()
+        return (
+            self.request.user == band_request.user
+            or self.request.user.is_superuser
+        )
