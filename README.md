@@ -194,6 +194,9 @@ There is considerable room for enhancement in my backend development skills. I p
 ## <a id="features">Features</a>
 A detailed list of features that enhance user interactions.
 
+#can you write with summary so its easy to read and I can open on click? start with index.html
+
+
 ## <a id="technologies">Technologies</a>
 ### <a id="language">Language</a>
 - **HTML:** Utilized for structuring the web content and layout of the application.

@@ -52,3 +52,10 @@ class BandRequestForm(forms.ModelForm):
     )
 
     labels = {"band": "Band", "motivation": "Motivation"}
+
+    def __init__(self, *args, **kwargs):
+        super(BandRequestForm, self).__init__(*args, **kwargs)
+        requested_bands = BandRequest.objects.values_list('band', flat=True)
+        self.fields['band'].queryset = Band.objects.exclude(
+            band_id__in=requested_bands
+        )
