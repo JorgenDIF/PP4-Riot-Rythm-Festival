@@ -237,6 +237,8 @@ Entity Relationship Diagram showing the database schema.
 Details of any APIs integrated into the project.
 
 ## <a id="testing">Testing</a>
+- A separate document, TEST.md, contains detailed test cases and results.
+[Link to TEST.md](TEST.md)
 ### <a id="bugs">Bugs</a>
 Documentation of known bugs and their status.
 
