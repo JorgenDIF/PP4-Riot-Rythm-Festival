@@ -5,11 +5,11 @@
 {% block title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-<div class="container text-center">
-  <h1>{% trans "Sign In" %}</h1>
+<div class="container text-center mt-2">
+ <div class="form"><h1>{% trans "Sign In" %}</h1>
 
   <p>{% blocktrans %}If you have not created an account yet, then please
-  <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+  <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p></div>
 
 
   <form class="form p-2" method="POST" action="{% url 'account_login' %}">
