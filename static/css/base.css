@@ -82,10 +82,10 @@ img.logo {
     border-bottom: 2px solid var(--blue);
     font-weight: 500;
 }
-/* Form */
+
 
 .form {
-    width: 100%;
+    width: 80%;
     margin: 3% auto;
     background-color: var(--off-white);
     box-shadow: var(--small-box-shadow);
@@ -139,7 +139,7 @@ img.logo {
     }
 
 /* Profiles */
-
+/*
 .profile.img {
     width: 200px;
     margin: 0 auto;
@@ -183,4 +183,24 @@ img.logo {
     .info {
         width: 30%;
     }
+}
+*/
+
+@media screen and (max-width: 600px) {
+    .form {
+        width: 75%;
+}
+
+    .form h1 {
+        font-size: 1.5rem;
+    }
+
+    .form h2 {
+        font-size: 1.2rem;
+    }
+
+    .form p {
+        font-size: 0.8rem;
+    }
+
 }

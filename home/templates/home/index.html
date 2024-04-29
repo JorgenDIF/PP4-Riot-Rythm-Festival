@@ -2,8 +2,8 @@
 
 {% block  content %}
 <section class="hero jumbotron jumbotron-fluid">
-    <div class="overlay">
-        <div class="container text-center">
+
+        <div class="form p-4 container text-center">
             <h1 class="display-4 pb-4">Welcome to Riot Rhythm Festival 2024</h1>
             <p class="lead pt-2 pb-4">Immerse yourself in the pulse of music and rebellion. Stay wild, stay in the riot — sign up, request your favorite bands from our Band Bank, and like other uers requests!!</p>
             {% if request.user.is_authenticated %}
@@ -15,7 +15,7 @@
             <h2 class="pt-4">Let's make this festival for the fans, by the fans!</h2>
             <p>Is your favorite band missing? <a href="mailto:organiser@riotrythmfest.com">Email the organizer</a> and tell them! It's your riot, it's your rhythm!</p>
         </div>
-    </div>
+
 </section>
 {% endblock %}
 

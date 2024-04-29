@@ -16,13 +16,13 @@
                         <img src="" alt="{% static '/icons/no-photography-icon.png' %}" alt="Image not found icon">
                     {% endif %}
                 </div>
-                <h1>{{ profile.user.username }}</h1>
+                <h1 class="mynew">Username:{{ profile.user.username }}</h1>
                 <p><strong>Joined: </strong> {{ profile.user.date_joined|date:'d M Y' }}</p>
                 {% if profile.bio is not none %}
                     {{ profile.bio|safe}}
                 {% endif %}
                 {% if request.user == profile.user %}
-                    <button id="myBtn" class="btn btn-priamry w-25 mb-4">Edit</button>
+                    <button id="myBtn" class="btn btn-primary w-25 mb-4">Edit</button>
                 {% endif %}
             </div>
             <!-- The Modal -->
