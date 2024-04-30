@@ -244,16 +244,70 @@ Details of any APIs integrated into the project.
 [Link to TEST.md](TEST.md)
 ### <a id="bugs">Bugs</a>
 Documentation of known bugs and their status.
+All known bugs are in the [Kanban Board](https://github.com/users/JorgenDIF/projects/4) under the "Bugs" column.
+
+
 
 ## <a id="setup-and-deployment">Setup and Deployment</a>
 ### <a id="create-repository">Create Repository</a>
-Steps to create a new repository, highlighting best practices.
+Step-by-step guide on creating a new repository from the Gitpod Full Template by Code Institute.
+
+**Log in to GitHub:**
+1. Open your web browser and navigate to GitHub.
+2. If you are not already logged in, enter your GitHub username and password to log in.
+
+**Access the Gitpod Full Template:**
+1. Go directly to the Gitpod Full Template repository.
+
+**Create a New Repository Using the Template:**
+1. On the template repository page, look for the green button that says "Use this template". Click on this button.
+2. You will be redirected to the "Create a new repository from gitpod-full-template" page.
+
+**Configure Your New Repository:**
+1. Repository name: Enter a name for your new repository.
+2. Repository description (optional): Provide a brief description of your repository.
+3. Privacy settings: Choose whether the repository should be Public (anyone can see this repository) or Private (you choose who can see this repository).
+4. Leave the "Include all branches" checkbox unchecked if you just need the main branch; check it if you need all branches from the template.
+
+**Create the Repository from the Template:**
+1. Click the "Create repository from template" button to create your new repository with the contents of the Gitpod Full Template.
+
+**Access Your New Repository:**
+1. Once the repository is created, you will be redirected to your new repository page on GitHub.
 
 ### <a id="initialize-in-vs-code">Initialize in VS Code</a>
-Instructions for setting up the project in Visual Studio Code.
+
+Clone in VSCode:
+1. Open VSCode.
+2. Press Ctrl + Shift + P (Cmd + Shift + P on macOS) to open the Command Palette.
+3. Type Git: Clone and select it.
+4. Paste the repository URL and press Enter.
+5. Select a directory to save the repository on your local machine.
+6. After cloning, a prompt will ask if you want to open the cloned repository. Click “Open”.
 
 ### <a id="set-up-virtual-environments">Set Up Virtual Environments</a>
-How to create and manage virtual environments.
+Requirements:
+
+**1. Python 3.x installed on your system.**
+
+**Steps:**
+
+**1. Open Your Command Line Interface:** This could be Terminal on macOS/Linux or Command Prompt on Windows.
+**2. Navigate to Your Project Directory:** Enter `cd path/to/your/project` to move into your project directory.
+**3. Create the Virtual Environment:**
+  - On Windows, type `python -m venv .venv`
+  - On macOS or Linux, type `python3 -m venv .venv`
+  This command creates a folder named `.venv` in your project directory containing the virtual environment.
+**4. Activate the Virtual Environment:**
+  - On Windows, type `.venv\Scripts\activate`
+  - On macOS or Linux, type `source .venv/bin/activate`
+  Activation changes the shell to use the environment’s settings and packages.
+**5. Install Dependencies:**
+  Once the environment is activated, install any required packages using `pip install package-name`.
+**6. Capture Installed Dependencies:**
+  To create a `requirements.txt` file that lists all installed packages, use `pip freeze > requirements.txt`. This file can then be used to install all necessary packages into another environment or shared with other developers.
+**7. Deactivate the Virtual Environment:**
+  When finished, you can deactivate the environment by typing `deactivate`.
 
 ### <a id="create-django-project">Create Django Project</a>
 Detailed steps on initializing a new Django project.
