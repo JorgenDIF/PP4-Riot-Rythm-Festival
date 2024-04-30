@@ -14,6 +14,7 @@
 --off-white: #f6f6f6;
 --white: #fff;
 --orange: #ffbf50;
+--pale-blue:#9db8ff;
 
 
 
@@ -91,7 +92,20 @@ img.logo {
     box-shadow: var(--small-box-shadow);
     border-radius: 5px;
 }
+/* Landing Page */
+.landing {
 
+    width: 80%;
+    margin: 3% auto;
+    background-color: var(--pale-blue);
+    box-shadow: var(--small-box-shadow);
+    border-radius: 5px;
+    opacity: 0.9;
+}
+
+.landing-intro {
+    
+}
 
 
 /* Bands */
