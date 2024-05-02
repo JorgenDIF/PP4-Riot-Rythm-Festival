@@ -13,6 +13,7 @@
             <h1 class ="text-center mt-2">{{ band.band_name }}</h1>
             <p class="text-center"><strong>{{ band.genre_choices }}</strong></p>
             <p class="text-center">DD Date: {{ band.dd_date }}</p>
+            <p class="text-center">Added by: {{ band.user.username }}</p>
             <p>{{ band.description|striptags }}</p>
 
             {% if request.user.is_superuser %}

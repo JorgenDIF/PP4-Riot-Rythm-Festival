@@ -23,6 +23,10 @@ class BandsForm(forms.ModelForm):
         "description": forms.Textarea(attrs={"rows": 5}),
     }
 
+    widgets = {
+        "motivation": forms.Textarea(attrs={"rows": 5}),
+    }
+
     labels = {
         "band_name": "Band Name",
         "description": "Description",
