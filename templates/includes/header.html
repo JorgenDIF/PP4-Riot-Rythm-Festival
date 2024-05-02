@@ -17,20 +17,14 @@
                 <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {% if url_name == 'band_bank' %}active{% endif %}" href="{% url 'band_bank' %}">Band Bank</a>
+                <a class="nav-link {% if url_name == 'band_bank' %}active{% endif %}" href="{% url 'band_bank' %}">Band Requests</a>
               </li>
+
+              {% if request.user.is_authenticated  %}
               <li class="nav-item">
-                <a class="nav-link {% if url_name == 'band_requests' %}active{% endif %}" href="{% url 'band_requests' %}">Band Requests</a>
+                <a class="nav-link {% if url_name == 'add_band' %}active {% endif %}" href="{% url 'add_band' %}">Request A Band</a>
               </li>
-              {% if request.user.is_superuser %}
-              <li class="nav-item">
-                <a class="nav-link {% if url_name == 'add_band' %}active {% endif %}" href="{% url 'add_band' %}">Add Band</a>
-              </li>
-              {% endif %}
-              {% if request.user.is_authenticated %}
-              <li class="nav-item">
-                <a class="nav-link {% if url_name == 'request_band' %}active {% endif %}" href="{% url 'request_band' %}">Request Band</a>
-              </li>
+
               <li class="nav-item">
                 <a class="nav-link {% if url_name == 'profile' %}active {% endif %}" href="{% url 'profile' request.user.id %}">Profile</a>
               </li>

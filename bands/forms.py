@@ -1,6 +1,6 @@
 from django import forms
 from djrichtextfield.widgets import RichTextWidget
-from .models import Band, BandRequest
+from .models import Band
 
 
 class BandsForm(forms.ModelForm):
@@ -32,30 +32,3 @@ class BandsForm(forms.ModelForm):
     }
 
 
-class BandRequestForm(forms.ModelForm):
-    """
-    A form for creating or updating a band request.
-
-    This form allows users to submit a band request and provide their
-    motivation for wanting the band to perform.
-    """
-
-    class Meta:
-        model = BandRequest
-        fields = ["band", "motivation"]
-
-    motivation = forms.CharField(
-        widget=forms.Textarea(
-            attrs={"rows": 3,
-                   "placeholder": "Why do you want this band to perform?"}
-        )
-    )
-
-    labels = {"band": "Band", "motivation": "Motivation"}
-
-    def __init__(self, *args, **kwargs):
-        super(BandRequestForm, self).__init__(*args, **kwargs)
-        requested_bands = BandRequest.objects.values_list('band', flat=True)
-        self.fields['band'].queryset = Band.objects.exclude(
-            band_id__in=requested_bands
-        )

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Band, BandRequest
+from .models import Band
 
 
 @admin.register(Band)
@@ -12,4 +12,4 @@ class BandAdmin(admin.ModelAdmin):
     list_filter = ("genre_choices",)
 
 
-admin.site.register(BandRequest)
+
