@@ -20,9 +20,9 @@ urlpatterns = [
     path("", AddBand.as_view(), name="add_band"),
     path("band_bank/", Bands.as_view(), name="band_bank"),
 
-    path("bands/<slug:slug>/", BandDetail.as_view(), name="band_detail"),
-    path("bands/<slug:slug>/delete/", DeleteBand.as_view(),
+    path("bands/<int:pk>/", BandDetail.as_view(), name="band_detail"),
+    path("bands/<int:pk>/delete/", DeleteBand.as_view(),
          name="delete_band"),
-    path("bands/<slug:slug>/edit/", EditBand.as_view(), name="edit_band"),
+    path("bands/<int:pk>/edit/", EditBand.as_view(), name="edit_band"),
 
 ]

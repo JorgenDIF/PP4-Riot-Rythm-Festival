@@ -9,7 +9,7 @@
 
 <div class="container d-flex flex-row flex-wrap justify_content-center">
     {% for band in bands %}
-        <a href="{% url 'band_detail' band.slug %}" class="bands" aria-label="Click to view {{ band.band_name }}">
+        <a href="{% url 'band_detail' band.pk %}" class="bands" aria-label="Click to view {{ band.band_name }}">
             <div class="card m-3" style="width: 18rem;">
                 <img src="{{ band.image.url }}" class="card-img-top" alt="{{ band.image_alt }}">
                 <div class="card-body">
