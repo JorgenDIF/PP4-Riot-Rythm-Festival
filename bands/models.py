@@ -43,6 +43,7 @@ class Band(models.Model):
     )
     image_alt = models.CharField(max_length=255, null=False, blank=False)
     description = RichTextField(max_length=5000)
+    motivation = RichTextField(max_length=5000, default='Default motivation')
     request_date = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(max_length=255, unique=True, blank=True)
 
@@ -56,6 +57,5 @@ class Band(models.Model):
 
     def __str__(self):
         return self.band_name
-
 
 

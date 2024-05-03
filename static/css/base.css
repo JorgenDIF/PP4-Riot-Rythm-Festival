@@ -15,7 +15,7 @@
 --off-white: #f6f6f6;
 --white: #fff;
 --orange: #ffbf50;
---pale-blue:#9db8ff;
+--pale-blue:#fffbd3;
 
 
 
@@ -82,7 +82,7 @@ img.logo {
 }
 
 .active {
-    border-bottom: 2px solid var(--pale-blue);
+    border: 2px solid var(--black);
     font-weight: 500;
 }
 
@@ -93,6 +93,11 @@ img.logo {
     background-color: var(--off-white);
     box-shadow: var(--small-box-shadow);
     border-radius: 5px;
+}
+
+.visitor-img {
+    width: 8rem;
+    margin: 0 auto;
 }
 /* Landing Page */
 .landing {
