@@ -1,20 +1,36 @@
 {% extends 'base.html' %}
 
-{% block  content %}
+{% block content %}
 <section class="hero jumbotron jumbotron-fluid">
+    <div class="landing p-4 container text-center">
+        <h1 class="display-4 pb-4">
+            Welcome to
+            <span class="festival-name">Riot Rhythm Festival</span> 2024
+        </h1>
+        <p class="lead pt-2 pb-4">
+            Immerse yourself in the pulse of music and rebellion. Stay wild, stay in the riot — sign up, request your favorite bands from our Band Bank, and like other users requests!!
+        </p>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'add_band' %}" class="btn btn-primary custom-btn-primary">Request A Band</a>
+        {% else %}
+        <a href="/accounts/signup/" class="btn btn-primary custom-btn-primary">Sign Up Now</a>
+        {% endif %}
+        <p class="pt-4">Let's make this festival for the fans, by the fans!</p>
+    </div>
+</section>
 
-        <div class="landing p-4 container text-center">
-            <h1 class="display-4 pb-4">Welcome to <span class="festival-name ">Riot Rhythm Festival</span> 2024</h1>
-            <p class="lead pt-2 pb-4">Immerse yourself in the pulse of music and rebellion. Stay wild, stay in the riot — sign up, request your favorite bands from our Band Bank, and like other uers requests!!</p>
-            {% if request.user.is_authenticated %}
-            <a href="{% url 'add_band' %}" class="btn btn-primary custom-btn-primary">Request A Band</a>
-            {% else %}
-            <a href="/accounts/signup/" class="btn btn-primary custom-btn-primary">Sign Up Now</a>
-            {% endif %}
+<section>
+    <div class="landing container text-center p-4">
+        <h2>Information</h2>
+        <p>
+            Dreaming of seeing your favorite bands live? At Riot Rythm Festival, your wishes set the stage! Dive into our Band Requests section to see which bands are already on the wishlist and cast your vote by liking the ones you hope to see live. Your likes help shape the lineup!
 
-            <p class="pt-4">Let's make this festival for the fans, by the fans!</h2>
+            Can't find your favorite band on the list? Why not add them yourself? Head over to the Add Band section and let us know who you want to see perform. From rock legends to indie icons, tell us who should be rocking out with us and we might just make it happen!
 
+            Riot Rythm Festival is set to rock an undisclosed location in Stockholm later this year. Stay tuned as we unveil more details about the venue and date!
 
+            What are you waiting for? Register now to vote and make band requests. Start shaping the music festival of your dreams today. Let’s make some noise and bring your favorite bands to the stage at Riot Rythm Festival!
+        </p>
+    </div>
 </section>
 {% endblock %}
-
