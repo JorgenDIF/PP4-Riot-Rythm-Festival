@@ -1,9 +1,10 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lobster&display=swap');
 
 :root {
     /** Fonts */
-    --title: 'arial';
-    --main-font: 'helvetica';
+    --title: 'Lobster', sans-serif;
+    --main-font: 'Lato', sans-serif;
+
 
 
 
@@ -34,10 +35,11 @@ body {
     font-family: var(--main-font);
 
 }
-h1, h2, h3, h4, h5, h6 {
+
+/*h1, h2, h3, h4, h5, h6 {
     font-family: var(--title);
 
-}
+}*/
 
 main {
     background-image: url('/static/images/rrbackground50.webp');
@@ -95,7 +97,7 @@ img.logo {
 /* Landing Page */
 .landing {
 
-    width: 80%;
+    width: 60%;
     margin: 3% auto;
     background-color: var(--pale-blue);
     box-shadow: var(--small-box-shadow);
@@ -103,10 +105,10 @@ img.logo {
     opacity: 0.9;
 }
 
-.landing-intro {
-    
-}
+.festival-name {
+    font-family: var(--title);
 
+}
 
 /* Bands */
 
