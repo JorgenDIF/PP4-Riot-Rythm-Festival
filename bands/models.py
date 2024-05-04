@@ -59,3 +59,20 @@ class Band(models.Model):
         return self.band_name
 
 
+class Like(models.Model):
+    """
+    Represents a like given by a user to a band.
+    Insspired by example on stackoverflow. Link in README.md file.
+    """
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE,
+                             related_name="likes")
+    band = models.ForeignKey(Band, on_delete=models.CASCADE,
+                             related_name="liked_by")
+    liked_date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('user', 'band')
+
+    def __str__(self):
+        return f"{self.user.username} likes {self.band.band_name}"
