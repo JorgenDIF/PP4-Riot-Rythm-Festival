@@ -78,6 +78,12 @@ footer {
     margin: 1rem;
 }
 
+.copyright-jj {
+    display: flex;
+    justify-content: end;
+
+}
+
 /* Header */
 .navbar {
     background-color: var(--off-white);
@@ -230,4 +236,10 @@ img.logo {
         width: 80px;
     }
 
+}
+
+@media screen and (max-width: 600px) {
+    .copyright-jj {
+        display: none;
+    }
 }
