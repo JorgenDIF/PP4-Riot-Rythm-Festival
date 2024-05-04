@@ -40,7 +40,7 @@ body {
 /* Buttons */
 .btn-festival {
     background-color: var(--button-red);
-    color: var(--white);
+    color: var(--black);
 
 
 }
@@ -58,6 +58,9 @@ main {
     flex: 1 0 auto;
     background-color: var(--white);
 }
+
+
+
 
 /* Footer */
 footer {
