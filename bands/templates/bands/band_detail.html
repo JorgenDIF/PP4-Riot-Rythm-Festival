@@ -11,11 +11,17 @@
         </div>
         <div class="band-details">
             <h1 class ="text-center mt-2">{{ band.band_name }}</h1>
+            <p class="text-center">Likes: {{ band.count_likes }}</p>
             <p class="text-center"><strong>{{ band.genre_choices }}</strong></p>
             <p class="text-center">DD Date: {{ band.dd_date }}</p>
             <p class="text-center">Added by: {{ band.user.username }}</p>
             <p class="text-center">Description: {{ band.description|striptags }}</p>
             <p class="text-center">Motivation: {{ band.motivation|striptags }}</p>
+
+            <form method="post" action="{% url 'like_band' pk=band.pk slug=band.slug %}">
+                {% csrf_token %}
+                <button type="submit">Like this band</button>
+            </form>
 
             {% if request.user.is_superuser %}
             <div class="text-center">

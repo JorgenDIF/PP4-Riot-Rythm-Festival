@@ -2,6 +2,7 @@ from django import forms
 from djrichtextfield.widgets import RichTextWidget
 from .models import Band
 
+
 class BandsForm(forms.ModelForm):
     """
     A form for creating or updating a band.

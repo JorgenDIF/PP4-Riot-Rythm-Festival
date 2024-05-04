@@ -12,6 +12,7 @@ from .views import (
     BandDetail,
     DeleteBand,
     EditBand,
+    LikeBand
 
 
 )
@@ -25,4 +26,6 @@ urlpatterns = [
          name="delete_band"),
     path("bands/<int:pk>/<slug:slug>/edit/", EditBand.as_view(),
          name="edit_band"),
+    path("bands/<int:pk>/<slug:slug>/like/", LikeBand.as_view(),
+         name="like_band"),
 ]

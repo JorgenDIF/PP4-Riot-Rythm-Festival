@@ -1,3 +1,4 @@
+from django.views import View
 from django.views.generic import (
     CreateView, ListView,
     DetailView, DeleteView,
@@ -7,10 +8,10 @@ from django.contrib.auth.mixins import (
     UserPassesTestMixin, LoginRequiredMixin
 )
 
-from .models import Band
+from .models import Band, Like
 from .forms import BandsForm
 
-from django.shortcuts import redirect
+from django.shortcuts import get_object_or_404, redirect
 
 
 class Bands(ListView):
@@ -38,11 +39,11 @@ class AddBand(LoginRequiredMixin, CreateView):
         """
         Validates the form data and saves the band.
 
-        If the user is not a superuser, redirects to the home page.
-        Sets the user field of the band instance to the current user.
+        This method is called when the form data is valid.
+        It sets the user attribute of the form
+        instance to the current user and then calls
+        the form_valid method of the parent class to save the form.
         """
-        if not self.request.user.is_superuser:
-            return redirect("home")
         form.instance.user = self.request.user
         return super(AddBand, self).form_valid(form)
 
@@ -87,4 +88,18 @@ class DeleteBand(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         return self.request.user.is_superuser
+
+
+class LikeBand(LoginRequiredMixin, View):
+    """
+    View for liking a band.
+
+    Inherits from LoginRequiredMixin and View.
+    """
+
+    def post(self, request, pk, *args, **kwargs):
+        print("Request method:", request.method)
+        band = get_object_or_404(Band, pk=pk)
+        Like.objects.get_or_create(user=request.user, band=band)
+        return redirect('band_detail', pk=band.pk, slug=band.slug)
 

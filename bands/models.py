@@ -52,6 +52,9 @@ class Band(models.Model):
             self.slug = slugify(self.band_name)
         super(Band, self).save(*args, **kwargs)
 
+    def count_likes(self):
+        return Like.objects.filter(band=self).count()
+
     class Meta:
         ordering = ["band_name"]
 
