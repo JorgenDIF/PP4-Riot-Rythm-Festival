@@ -29,7 +29,6 @@ html, body {
 }
 
 body {
-
     display: flex;
     flex-direction: column;
     font-family: var(--main-font);
@@ -72,6 +71,12 @@ footer {
     box-shadow: var(--small-box-shadow);
 }
 
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+
 a.nav-link {
     color: var(--black);
 }
@@ -88,7 +93,7 @@ img.logo {
 
 
 .form {
-    width: 80%;
+    width: 60%;
     margin: 3% auto;
     background-color: var(--off-white);
     box-shadow: var(--small-box-shadow);
