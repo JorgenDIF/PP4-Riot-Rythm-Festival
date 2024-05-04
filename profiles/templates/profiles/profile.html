@@ -7,7 +7,9 @@
 
 {% block content %}
     <div class="container p-4">
+
         <div class="landing profile py-4">
+            <h1 class="text-center">Profile</h1>
             <div class="text-center info">
                 <div class="profile-img text-center">
                     {% if profile.image.url is not none %}
@@ -23,7 +25,7 @@
                 {% endif %}
             </div>
                 {% if request.user == profile.user %}
-                    <button id="myBtn" class="btn btn-primary w-25 mt-4">Edit</button>
+                    <button id="myBtn" class="btn btn-festival w-25 mt-4">Edit</button>
                 {% endif %}
             </div>
             <!-- The Modal -->

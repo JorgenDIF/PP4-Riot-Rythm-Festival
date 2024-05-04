@@ -16,6 +16,8 @@
 --white: #fff;
 --orange: #ffbf50;
 --pale-blue:#fffbd3;
+--button-red:#c9a19c;
+
 
 
 
@@ -35,10 +37,18 @@ body {
 
 }
 
-/*h1, h2, h3, h4, h5, h6 {
-    font-family: var(--title);
+/* Buttons */
+.btn-festival {
+    background-color: var(--button-red);
+    color: var(--white);
 
-}*/
+
+}
+
+.btn-festival:hover {
+    background-color: var(--orange);
+    color: var(--black);
+}
 
 main {
     background-image: url('/static/images/rrbackground50.webp');

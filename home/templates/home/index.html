@@ -10,9 +10,9 @@
             Immerse yourself in the pulse of music and rebellion. Stay wild, stay in the riot — sign up, request your favorite bands from our Band Bank, and like other users requests!!
         </p>
         {% if request.user.is_authenticated %}
-        <a href="{% url 'add_band' %}" class="btn btn-primary custom-btn-primary">Request A Band</a>
+        <a href="{% url 'add_band' %}" class="btn btn-festival">Request A Band</a>
         {% else %}
-        <a href="/accounts/signup/" class="btn btn-primary custom-btn-primary">Sign Up Now</a>
+        <a href="/accounts/signup/" class="btn btn-festival">Sign Up Now</a>
         {% endif %}
         <p class="pt-4">Let's make this festival for the fans, by the fans!</p>
     </div>
@@ -20,20 +20,21 @@
 
 <section>
     <div class="landing container text-center p-4">
-        <h2>Information</h2>
+       <div class="form"> <h2>Information</h2>
         <p>
-            <strong>Make Your Musical Dream a Reality at Riot Rythm Festival!</strong>
-            You Call the Shots!
+            <strong>Make Your Musical Dream a Reality at Riot Rythm Festival!</strong> <br>
+            <strong> You Call the Shots!</strong> <br> <br>
+        </p>
+    </div>
+           <p><strong>Engage with Us: </strong>  Jump into our Band Requests section to vote for your favorite bands or suggest new ones. Your choices shape the lineup!
+            Take the Lead: Can't find your favorite band? Add them to our lineup in the 'Add Band' section. Whether you're into rock legends or indie icons, we want to hear from you! <br>
+             <br>
 
-            Engage with Us: Jump into our Band Requests section to vote for your favorite bands or suggest new ones. Your choices shape the lineup!
-            Take the Lead: Can't find your favorite band? Add them to our lineup in the 'Add Band' section. Whether you're into rock legends or indie icons, we want to hear from you!
-            Stay Tuned:
+           <strong>Keep Updated:</strong>  The Riot Rythm Festival is coming to Stockholm later this year. Don't miss out on our announcements for dates and venues!
+            Act Now: Register and log in to unlock full features. Start liking bands, making requests, and fully engage with the festival planning. <br> <br>
 
-            Keep Updated: The Riot Rythm Festival is coming to Stockholm later this year. Don't miss out on our announcements for dates and venues!
-            Act Now: Register and log in to unlock full features. Start liking bands, making requests, and fully engage with the festival planning.
-            Let's Get Loud:
 
-            Bring the Noise: Help us bring your favorite bands to the stage. The more you interact, the better the festival!
+           <strong>Let's Get Loud! Bring the Noise!: </strong>  Help us bring your favorite bands to the stage. The more you interact, the better the festival!
             Remember: Your clicks in the Band Requests section bring the bands you love one step closer to our stage. Let's rock the Riot Rythm Festival together!
         </p>
     </div>
