@@ -81,6 +81,7 @@ footer {
 .copyright-jj {
     display: flex;
     justify-content: end;
+    margin-top: 15px;
 
 }
 
