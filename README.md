@@ -1,9 +1,10 @@
 
 # Riot Rythm Festival 2024
 
-![alt text](assets/images/riotlogo.png)
+![alt text](documents/rrfestival.webp)
 
-Welcome to the Riot Rythm Festival 2024! Here, you'll experience the pinnacle of musical freedom and create memories that last a lifetime.
+
+Welcome to Riot Rythm Festival 2024 :studio_microphone:! Here, you'll experience the ultimate musical freedom and create memories that last a lifetime. You, our beloved attendees, are the ones in control. It's you who will determine which bands will take the stage. The more likes your favorite band receives, the greater their chance to perform. This festival is by fans, for fans. So let's come together and create the perfect music experience! :skull:
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -148,6 +149,10 @@ These design elements are chosen to create a welcoming and interactive online en
 Discussion on the website's responsiveness and its adaptation to various devices.
 
 ## <a id="project-overview">Project Overview</a>
+A comprehensive overview of the project, including learning objectives, assignment requirements, and self-assessment.
+<details>
+<summary>Click to expand</summary>
+
 ### <a id="learning-objectives">Learning Objectives</a>
 What the project aims to achieve in terms of learning and development
 1. **Mastery of Django:** Gain deep understanding and hands-on experience with Django, focusing on its ORM, views, templates, and forms.
@@ -156,9 +161,13 @@ What the project aims to achieve in terms of learning and development
 4. **Kanban Board Implementation:** Utilize Kanban methodology for effective project management and task tracking.
 5. **Project Management and Version Control:** Manage software development using Git for version control, enhancing collaboration and project tracking abilities.
 6. **Testing and User Feedback:** Engage in thorough testing practices and gather user feedback to refine the application.
+</details>
+
 
 ### <a id="assignment-requirements">Assignment Requirements</a>
 A detailed list of project requirements as outlined by the educational curriculum:
+<details>
+<summary>Click to expand</summary>
 1. Functionality: Create a fully functional web application where users can suggest, select, and like bands.
 2. User Authentication: Implement secure user registration and login capabilities.
 3. Database Management: Design and utilize a database to store user data and band information.
@@ -167,10 +176,12 @@ A detailed list of project requirements as outlined by the educational curriculu
 6. Project Documentation: Maintain comprehensive documentation of the development process and code.
 7. Version Control: Use Git to manage the project repository, with consistent commits and clear commit messages.
 8. Kanban Board: Set up and maintain a Kanban board for task management throughout the project duration.
+</details>
 
 ### <a id="self-assessment">Self-Assessment</a>
 
-
+<details>
+<summary>Click to expand</summary>
 1. **Learning Reflection:**
 The journey through this project has deepened my appreciation for the robustness of Django and the utility of Bootstrap in creating responsive designs. As I navigated the intricacies of these technologies, I've learned to leverage their strengths to build a more efficient and detailed application.
 
@@ -187,7 +198,7 @@ Developing a full-stack application that effectively utilizes both client-side a
 There is considerable room for enhancement in my backend development skills. I plan to focus on better understanding and optimizing database management and server-side processing to improve application performance and scalability. Further practice and study will be essential for me to achieve greater efficiency and robustness in my backend solutions.
 
 
-
+</details>
 
 
 
@@ -233,11 +244,14 @@ Details on the frameworks and libraries integrated into the project:
 Discussion of the design principles and aesthetics adopted in the project.
 
 ## <a id="data-modeling-and-database-design">Data Modeling and Database Design</a>
-### <a id="erd">ERD</a>
+### <a id="erd">ERD</a>![ERD Diagram](documents/erd.webp)
 Entity Relationship Diagram showing the database schema.
 
 ### <a id="api-integration">API Integration</a>
-Details of any APIs integrated into the project.
+### Cloudinary API
+
+The project uses the [Cloudinary](https://cloudinary.com/) API for handling media files like images and videos. The API key is stored in `env.py` for security purposes.
+
 
 ## <a id="testing">Testing</a>
 - A separate document, TEST.md, contains detailed test cases and results.
@@ -251,6 +265,8 @@ All known bugs are in the [Kanban Board](https://github.com/users/JorgenDIF/proj
 ## <a id="setup-and-deployment">Setup and Deployment</a>
 ### <a id="create-repository">Create Repository</a>
 Step-by-step guide on creating a new repository from the Gitpod Full Template by Code Institute.
+<details>
+<summary>Click to expand</summary>
 
 **Log in to GitHub:**
 1. Open your web browser and navigate to GitHub.
@@ -285,8 +301,12 @@ Clone in VSCode:
 5. Select a directory to save the repository on your local machine.
 6. After cloning, a prompt will ask if you want to open the cloned repository. Click “Open”.
 
+</details>
+
 ### <a id="set-up-virtual-environments">Set Up Virtual Environments</a>
 Requirements:
+<details>
+<summary>Click to expand</summary>
 
 **1. Python 3.x installed on your system.**
 
@@ -308,18 +328,108 @@ Requirements:
   To create a `requirements.txt` file that lists all installed packages, use `pip freeze > requirements.txt`. This file can then be used to install all necessary packages into another environment or shared with other developers.
 **7. Deactivate the Virtual Environment:**
   When finished, you can deactivate the environment by typing `deactivate`.
+  </details>
 
 ### <a id="create-django-project">Create Django Project</a>
-Detailed steps on initializing a new Django project.
+Step-by-step guide on how to create a new Django project.
+<details>
+<summary>Click to expand</summary>
+
+1. Install Django: Ensure you have Django installed on your system. If not, you can install it using pip:
+  ```
+  pip install django
+  ```
+
+2. Create a New Django Project: Use the django-admin command to create a new Django project. Replace `project_name` with the desired name for your project:
+  ```
+  django-admin startproject project_name
+  ```
+
+3. Navigate to the Project Directory: Change into the newly created project directory:
+  ```
+  cd project_name
+  ```
+
+4. Create a Virtual Environment (Optional): It's good practice to work within a virtual environment. You can create one using virtualenv:
+  ```
+  virtualenv venv
+  ```
+
+  Activate the virtual environment:
+  - On Windows:
+    ```
+    venv\Scripts\activate
+    ```
+  - On Unix or MacOS:
+    ```
+    source venv/bin/activate
+    ```
+
+5. Initialize Git (Optional): If you're using version control with Git, initialize a new Git repository:
+  ```
+  git init
+  ```
+
+6. Create .gitignore File (Optional): Create a .gitignore file to specify which files and directories Git should ignore. Typically, this includes the `venv` directory, database files, and sensitive configuration files.
+
+7. Set Up Environment Variables: Create an `env.py` file to store sensitive information like secret keys and API keys. Add this file to your `.gitignore` to prevent it from being pushed to your repository. An example `env.py` file might look like this:
+  ```python
+  import os
+
+  os.environ.setdefault('SECRET_KEY', 'your_secret_key_here')
+  os.environ.setdefault('DEBUG', 'True')
+  ```
+
+  Replace `'your_secret_key_here'` with a randomly generated secret key.
+
+8. Configure Django Settings: Update the Django settings (`settings.py`) to use environment variables. For example, you can set the `SECRET_KEY` and `DEBUG` variables like this:
+  ```python
+  import os
+
+  SECRET_KEY = os.environ.get('SECRET_KEY')
+  DEBUG = os.environ.get('DEBUG') == 'True'
+  ```
+
+  Ensure to import `env` at the top of `settings.py` to load environment variables.
+
+9. Run Migrations: If your project uses a database, apply initial migrations:
+  ```
+  python manage.py migrate
+  ```
+
+10. Start the Development Server: Finally, start the Django development server to verify that everything is set up correctly:
+   ```
+   python manage.py runserver
+   ```
+
+   Open a web browser and navigate to http://127.0.0.1:8000 to see your new Django project in action.
+
+</details>
+
 
 ### <a id="deployment-to-github">Deployment to Github</a>
-Step-by-step guide on pushing the project to GitHub.
+
+<details>
+<summary>Click to expand</summary>
+1. Add Files to Git: Navigate to your project directory in the terminal and add all your project files to the staging area by running:
+  ```
+  git add .
+  ```
+
+2. Commit Changes: Commit the staged files with a descriptive message to track changes. For example:
+  ```
+  git commit -m "Initial commit: Added Django project files"
+  ```
+
+3. Push to GitHub: Push your local repository to GitHub:
+  ```
+  git push
+  ```
+  </details>
 
 ### <a id="deployment-to-heroku">Deployment to Heroku</a>
 Detailed procedure for deploying the project on Heroku.
 
-### <a id="local-deployment">Local Deployment</a>
-Guidelines for deploying the project locally.
 
 ## <a id="credits">Credits</a>
 ### <a id="content">Content</a>
