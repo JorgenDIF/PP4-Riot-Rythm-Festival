@@ -3,7 +3,7 @@
 {% block title %}{Band Detail - {band.band_name }}{% endblock %}
 
 {% block content %}
-<div class="contaner">
+<div class="landing contaner">
     <div class="band-info m-3 p-1">
         <div class="band-img">
             <img src="{{ band.image.url }}" alt="{{ band.image_alt }}">
@@ -14,12 +14,13 @@
             <p class="text-center"><strong>{{ band.genre_choices }}</strong></p>
             <p class="text-center">DD Date: {{ band.dd_date }}</p>
             <p class="text-center">Added by: {{ band.user.username }}</p>
-            <p>{{ band.description|striptags }}</p>
+            <p class="text-center">Description: {{ band.description|striptags }}</p>
+            <p class="text-center">Motivation: {{ band.motivation|striptags }}</p>
 
             {% if request.user.is_superuser %}
             <div class="text-center">
-                <a href="{% url 'edit_band' band.pk %}" class="btn btn-primary w-25">Edit</a>
-                <a href="{% url 'delete_band' band.pk %}" class="btn btn-primary w-25">Delete</a>
+                <a href="{% url 'edit_band' band.pk band.slug %}" class="btn btn-primary w-25">Edit</a>
+                <a href="{% url 'delete_band' band.pk band.slug %}" class="btn btn-primary w-25">Delete</a>
             </div>
             {% endif %}
     </div>
