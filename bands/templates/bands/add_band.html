@@ -4,8 +4,17 @@
 
 {% block content %}
 <div class="container">
-    <form method="POST" enctype="multipart/form-data" class="p-2 landing">
-        <h1 class="text-center">Add Band</h1>
+    <form method="POST" enctype="multipart/form-data" class="p-4 landing">
+        <h1 class="text-center">Request a Band</h1>
+        <div class="form p-4"><p class="fw-bolder">The more carefully you fill in this form, the better are your chances of getting the band to play.</p>
+        <p><strong>Band Name:</strong> Name of the band</p>
+        <p><strong>Description:</strong> Description of the band</p>
+        <p><strong>Motivation:</strong> Why do you want to see them?</p>
+        <p><strong>Genre:</strong> What genre does the band play?</p>
+        <p><strong>Image:</strong> Upload an image of the band</p>
+        <p><strong>Image alt:</strong> Add an alt to the image if it's not showing</p></div>
+        {% csrf_token %}
+        {% csrf_token %}
         {% csrf_token %}
         {{ form.media }}
         {{ form|crispy}}
