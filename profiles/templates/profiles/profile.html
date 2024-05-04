@@ -7,21 +7,21 @@
 
 {% block content %}
     <div class="container p-4">
-        <div class="profile">
+        <div class="landing profile py-4">
             <div class="text-center info">
                 <div class="profile-img text-center">
                     {% if profile.image.url is not none %}
                         <img src="{{ profile.image.url }}" alt="{{ profile.user.username}}'s profile image">
                     {% else %}
-                        <img src="" alt="{% static '/icons/no-photography-icon.png' %}" alt="Image not found icon">
+                        <img src="{% static '/icons/no-photography-icon.png' %}" alt="Image not found icon">
                     {% endif %}
                 </div>
-                <div class= "form text-center margin-auto"><h1>Username:{{ profile.user.username }}</h1>
+                <div class= "form text-center margin-auto"><p> <strong>Username: </strong>{{ profile.user.username }}</p>
                 <p><strong>Joined: </strong> {{ profile.user.date_joined|date:'d M Y' }}</p>
                 {% if profile.bio is not none %}
                   <p><strong>Bio:</strong><span>{{ profile.bio|safe}}</span></p>
-                </div>
                 {% endif %}
+            </div>
                 {% if request.user == profile.user %}
                     <button id="myBtn" class="btn btn-primary w-25 mt-4">Edit</button>
                 {% endif %}
