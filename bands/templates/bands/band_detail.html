@@ -9,24 +9,24 @@
             <img src="{{ band.image.url }}" alt="{{ band.image_alt }}">
 
         </div>
-        <div class="band-details">
-            <h1 class ="text-center mt-2">{{ band.band_name }}</h1>
-            <p class="text-center">Likes: {{ band.count_likes }}</p>
-            <p class="text-center"><strong>{{ band.genre_choices }}</strong></p>
-            <p class="text-center">DD Date: {{ band.dd_date }}</p>
-            <p class="text-center">Added by: {{ band.user.username }}</p>
-            <p class="text-center">Description: {{ band.description|striptags }}</p>
-            <p class="text-center">Motivation: {{ band.motivation|striptags }}</p>
+        <div class="form band-details text-center pb-2">
+            <h1 class ="mt-2">{{ band.band_name }}</h1>
+            <p class="p-2">❤️ Likes: {{ band.count_likes }}</p>
+            <p class="p-2"><strong>Genre: </strong>{{ band.genre_choices }}</p>
+            <p class="p-2"><strong>DD Date: </strong> {{ band.request_date|date:"F j, Y" }}</p>
+            <p class="p-2"><strong>Added by: </strong>{{ band.user.username }}</p>
+            <p class="p-2"><strong>Description: </strong>{{ band.description|striptags }}</p>
+            <p class="p-2"><strong>Motivation: </strong>{{ band.motivation|striptags }}</p>
 
             <form method="post" action="{% url 'like_band' pk=band.pk slug=band.slug %}">
                 {% csrf_token %}
-                <button type="submit">Like this band</button>
+                <button class="btn btn-festival" type="submit">❤️ Like this band Request</button>
             </form>
 
             {% if request.user.is_superuser %}
             <div class="text-center">
-                <a href="{% url 'edit_band' band.pk band.slug %}" class="btn btn-primary w-25">Edit</a>
-                <a href="{% url 'delete_band' band.pk band.slug %}" class="btn btn-primary w-25">Delete</a>
+                <a href="{% url 'edit_band' band.pk band.slug %}" class="btn btn-festival w-20 mt-1">Edit</a>
+                <a href="{% url 'delete_band' band.pk band.slug %}" class="btn btn-festival w-20 mt-1">Delete</a>
             </div>
             {% endif %}
     </div>

@@ -11,7 +11,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <!-- Navbar links -->
-          <div class="m-5 collapse navbar-collapse" id="navbarNav">
+          <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto mb-2">
               <li class="nav-item">
                 <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
@@ -43,7 +43,9 @@
 
               {% endif %}
             </ul>
-            <img class="visitor-img d-none d-lg-block" src="{% static 'images/festival-visitor.png' %}" alt="visitor-img">
+
+            <img class="skeleton-img d-none d-lg-block" src="{% static 'images/skeleton-dance-.webp' %}" alt="skeleton-img">
+            <img class="skeleton-img d-none d-lg-block" src="{% static 'images/singing-skeleton-.webp' %}" alt="skeleton-img">
           </div>
 
         </div>

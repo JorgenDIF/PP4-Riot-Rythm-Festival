@@ -25,11 +25,11 @@
                 {% endif %}
             </div>
                 {% if request.user == profile.user %}
-                    <button id="myBtn" class="btn btn-festival w-25 mt-4">Edit</button>
+                    <button id="myBtn" class="btn btn-festival w-30 mt-4">Edit</button>
                 {% endif %}
             </div>
             <!-- The Modal -->
-            <div id="myModal" class="modal mt-5">
+            <div id="myModal" class="modal">
                 <!-- Modal content -->
                 <div class="modal-content container">
                     <span class="close fs-1 pe-2">&times;</span>
@@ -39,7 +39,7 @@
                         {{ form|crispy }}
                         {{ form.media }}
                         <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary w-25">Edit</button>
+                            <button type="submit" class="btn btn-festival w-30">Edit</button>
                         </div>
                     </form>
                 </div>
