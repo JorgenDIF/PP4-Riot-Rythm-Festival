@@ -17,8 +17,8 @@
                 <div class="card-body">
                     <h2 class="card-title">{{ band.band_name }}</h2>
                     <p class="card-text">{{ band.genre_choices }}</p>
-                    <p class="card-text"><strong>Decription:</strong>  {{ band.description|striptags|truncatechars:50 }}</p>
-                    <p class="card.text"><strong>Motivation:</strong>  {{ band.motivation|striptags|truncatechars:50 }}</p>
+                    <p class="card-text"><strong>Decription:</strong>  {{ band.description|safe|truncatechars:50 }}</p>
+                    <p class="card.text"><strong>Motivation:</strong>  {{ band.motivation|safe|truncatechars:50 }}</p>
                     <p class="card-text"> <strong>Added By:</strong>  {{ band.user.username }}</p>
                     <p class="card-tex pb-4"> <strong>Added On:</strong>  {{ band.request_date|date:"F j, Y" }}</p>
                 </div>

@@ -20,11 +20,6 @@ class BandsForm(forms.ModelForm):
     description = forms.CharField(widget=RichTextWidget())
     motivation = forms.CharField(widget=RichTextWidget())
 
-    widgets = {
-        "description": forms.Textarea(attrs={"rows": 5}),
-        "motivation": forms.Textarea(attrs={"rows": 5}),
-    }
-
     labels = {
         "band_name": "Band Name",
         "description": "Description",

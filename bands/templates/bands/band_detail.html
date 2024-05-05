@@ -15,8 +15,8 @@
             <p class="p-2"><strong>Genre: </strong>{{ band.genre_choices }}</p>
             <p class="p-2"><strong>DD Date: </strong> {{ band.request_date|date:"F j, Y" }}</p>
             <p class="p-2"><strong>Added by: </strong>{{ band.user.username }}</p>
-            <p class="p-2"><strong>Description: </strong>{{ band.description|striptags }}</p>
-            <p class="p-2"><strong>Motivation: </strong>{{ band.motivation|striptags }}</p>
+            <p class="p-2"><strong>Description: </strong>{{ band.description|safe }}</p>
+            <p class="p-2"><strong>Motivation: </strong>{{ band.motivation|safe }}</p>
 
             <form method="post" action="{% url 'like_band' pk=band.pk slug=band.slug %}">
                 {% csrf_token %}
