@@ -3,7 +3,7 @@
 {% block title %}{Band Detail - {band.band_name }}{% endblock %}
 
 {% block content %}
-<div class="landing contaner">
+<div class="landing container">
     <div class="band-info m-3 p-1">
         <div class="band-img">
             <img src="{{ band.image.url }}" alt="{{ band.image_alt }}">
@@ -29,6 +29,7 @@
                 <a href="{% url 'delete_band' band.pk band.slug %}" class="btn btn-festival w-20 mt-1">Delete</a>
             </div>
             {% endif %}
+        </div>
     </div>
 </div>
 
