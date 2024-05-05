@@ -1,9 +1,10 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lobster&display=swap');
 
 :root {
     /** Fonts */
-    --title: 'arial';
-    --main-font: 'helvetica';
+    --title: 'Lobster', sans-serif;
+    --main-font: 'Lato', sans-serif;
+
 
 
 
@@ -14,7 +15,9 @@
 --off-white: #f6f6f6;
 --white: #fff;
 --orange: #ffbf50;
---pale-blue:#9db8ff;
+--pale-blue:#fffbd3;
+--button-red:#c9a19c;
+
 
 
 
@@ -28,15 +31,23 @@ html, body {
 }
 
 body {
-
     display: flex;
     flex-direction: column;
     font-family: var(--main-font);
 
 }
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--title);
 
+/* Buttons */
+.btn-festival {
+    background-color: var(--button-red);
+    color: var(--black);
+
+
+}
+
+.btn-festival:hover {
+    background-color: var(--orange);
+    color: var(--black);
 }
 
 main {
@@ -47,6 +58,9 @@ main {
     flex: 1 0 auto;
     background-color: var(--white);
 }
+
+
+
 
 /* Footer */
 footer {
@@ -64,10 +78,33 @@ footer {
     margin: 1rem;
 }
 
+.copyright-jj {
+    display: flex;
+    justify-content: end;
+    margin-top: 15px;
+
+}
+
 /* Header */
 .navbar {
     background-color: var(--off-white);
     box-shadow: var(--small-box-shadow);
+    margin-left: 10px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+
+.skeleton-img {
+    width: 4rem;
+    margin-right: 50px;
+}
+
+#navbarNav {
+    margin-left: 250px;
 }
 
 a.nav-link {
@@ -80,22 +117,24 @@ img.logo {
 }
 
 .active {
-    border-bottom: 2px solid var(--blue);
+    border: 2px solid var(--black);
     font-weight: 500;
 }
 
-
+/* Form */
 .form {
-    width: 80%;
+    width: 60%;
     margin: 3% auto;
     background-color: var(--off-white);
     box-shadow: var(--small-box-shadow);
     border-radius: 5px;
 }
+
+
 /* Landing Page */
 .landing {
 
-    width: 80%;
+    width: 60%;
     margin: 3% auto;
     background-color: var(--pale-blue);
     box-shadow: var(--small-box-shadow);
@@ -103,10 +142,10 @@ img.logo {
     opacity: 0.9;
 }
 
-.landing-intro {
-    
-}
+.festival-name {
+    font-family: var(--title);
 
+}
 
 /* Bands */
 
@@ -142,63 +181,18 @@ img.logo {
     align-items: center;
 }
 
-/*@media screen and  (min-width: 62.5em) {
-    .band-img {
-       width: 40%;
-       margin: 0 auto;
-    }
+/* Profile */
 
-    .band-details {
-        width: 60%;
-    }
-
-/* Profiles */
-/*
-.profile.img {
+.profile img {
     width: 200px;
-    margin: 0 auto;
-}
-
-.profile.img img {
-    width: 100%;
-    border-radius: 8px;
+    border-radius: 2rem;
 
 }
 
-.profile {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-
+#myModal {
+  margin-top: 250px;
 }
 
-.info {
-    width: 100%;
-    text-align: center;
-}
-
-@media screen and (min-width:40em) {
-    .form {
-        width: 50%;
-    }
-
-    .img-container {
-        flex-direction: row;
-        width: 29%;
-    }
-}
-
-@media screen and (min-width: 62.5em) {
-    .profile {
-        flex-direction: row;
-    }
-
-    .info {
-        width: 30%;
-    }
-}
-*/
 
 @media screen and (max-width: 600px) {
     .form {
@@ -217,4 +211,36 @@ img.logo {
         font-size: 0.8rem;
     }
 
+    .profile img {
+        width: 100px;
+    }
+
+}
+@media screen and (max-width: 1300px) {
+    #navbarNav {
+        margin-left: 0;
+    }
+
+    .form h1 {
+        font-size: 1.2rem;
+    }
+
+    .form h2 {
+        font-size: 1rem;
+    }
+
+    .form p {
+        font-size: 0.7rem;
+    }
+
+    .profile img {
+        width: 80px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .copyright-jj {
+        display: none;
+    }
 }
