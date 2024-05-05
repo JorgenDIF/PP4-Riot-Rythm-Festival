@@ -190,9 +190,12 @@ img.logo {
 }
 
 #myModal {
-  margin-top: 250px;
+  margin-top: 140px;
 }
 
+.close:hover {
+    cursor: pointer;
+}
 
 @media screen and (max-width: 600px) {
     .form {
