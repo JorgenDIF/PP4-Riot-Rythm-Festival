@@ -74,7 +74,9 @@ class EditBand(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     success_url = "/bands/"
 
     def test_func(self):
-        return self.request.user.is_superuser
+        band = self.get_object()
+        return (self.request.user.is_superuser or
+                band.user == self.request.user)
 
 
 class DeleteBand(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -87,7 +89,9 @@ class DeleteBand(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     success_url = "/bands/"
 
     def test_func(self):
-        return self.request.user.is_superuser
+        band = self.get_object()
+        return (self.request.user.is_superuser or
+                band.user == self.request.user)
 
 
 class LikeBand(LoginRequiredMixin, View):

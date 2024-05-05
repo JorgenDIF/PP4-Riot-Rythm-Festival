@@ -23,7 +23,7 @@
                 <button class="btn btn-festival" type="submit">❤️ Like this band Request</button>
             </form>
 
-            {% if request.user.is_superuser %}
+            {% if request.user.is_superuser or band.user == request.user %}
             <div class="text-center">
                 <a href="{% url 'edit_band' band.pk band.slug %}" class="btn btn-festival w-20 mt-1">Edit</a>
                 <a href="{% url 'delete_band' band.pk band.slug %}" class="btn btn-festival w-20 mt-1">Delete</a>
