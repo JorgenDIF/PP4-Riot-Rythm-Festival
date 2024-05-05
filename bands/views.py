@@ -113,4 +113,3 @@ class LikeBand(LoginRequiredMixin, View):
         band = get_object_or_404(Band, pk=pk)
         Like.objects.get_or_create(user=request.user, band=band)
         return redirect('band_detail', pk=band.pk, slug=band.slug)
-    

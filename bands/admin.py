@@ -8,8 +8,6 @@ class BandAdmin(admin.ModelAdmin):
         "band_name",
         "genre_choices",
         "image",
+        "user",
     )
     list_filter = ("genre_choices",)
-
-
-
