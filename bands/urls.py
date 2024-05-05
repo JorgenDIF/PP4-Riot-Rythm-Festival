@@ -1,9 +1,4 @@
-"""
-URL patterns for the bands app.
 
-This module defines the URL patterns for the bands app in the PP4
-Riot Rythm Festival project.
-"""
 
 from django.urls import path
 from .views import (
@@ -16,6 +11,13 @@ from .views import (
 
 
 )
+
+"""
+URL patterns for the bands app.
+
+This module defines the URL patterns for the bands app in the PP4
+Riot Rythm Festival project.
+"""
 
 urlpatterns = [
     path("", AddBand.as_view(), name="add_band"),

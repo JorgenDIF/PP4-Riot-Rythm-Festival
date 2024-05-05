@@ -9,6 +9,10 @@ from django_resized import ResizedImageField
 
 
 class Profile(models.Model):
+    """
+    A model representing a band with inspiration from the Macs YouTube video.
+    Link to video is in the README.md file.
+    """
 
     user = models.ForeignKey(User, related_name="profile",
                              on_delete=models.CASCADE)

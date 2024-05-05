@@ -17,6 +17,10 @@ GENRE_CHOICES = (
     ("Blues", "Blues"),
     ("Punk", "Punk"),
     ("Disco", "Disco"),
+    ("Country", "Country"),
+    ("Jazz", "Jazz"),
+    ("Rock n Roll", "Rock n Roll"),
+    ("Reggae", "Reggae"),
 )
 
 

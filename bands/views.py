@@ -10,6 +10,7 @@ from django.contrib.auth.mixins import (
 
 from .models import Band, Like
 from .forms import BandsForm
+from django.urls import reverse
 
 from django.shortcuts import get_object_or_404, redirect
 
@@ -33,7 +34,13 @@ class AddBand(LoginRequiredMixin, CreateView):
     template_name = "bands/add_band.html"
     model = Band
     form_class = BandsForm
-    success_url = "/bands/"
+
+    def get_success_url(self):
+        """
+        Returns the URL to redirect to after the form is successfully
+        validated.
+        """
+        return reverse('band_bank')
 
     def form_valid(self, form):
         """
@@ -106,4 +113,4 @@ class LikeBand(LoginRequiredMixin, View):
         band = get_object_or_404(Band, pk=pk)
         Like.objects.get_or_create(user=request.user, band=band)
         return redirect('band_detail', pk=band.pk, slug=band.slug)
-
+    
