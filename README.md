@@ -146,11 +146,18 @@ The surface level of the project focuses on the aesthetic and sensory aspects, d
 These design elements are chosen to create a welcoming and interactive online environment that reflects the festival's vibrant community and provides an engaging user experience. The combination of visual appeal and functional design will make the site not only a tool for interaction but also a pleasing space to explore.
 
 ## <a id="am-i-responsive">Am I Responsive</a>
-Discussion on the website's responsiveness and its adaptation to various devices.
+Showing of the responsiveness of the website on different devices.
+<details>
+<summary>Click to expand</summary>
+
+
+
+![am I responsive](documents/am-i-respo.png)
+</details>
 
 ## <a id="project-overview">Project Overview</a>
 A comprehensive overview of the project, including learning objectives, assignment requirements, and self-assessment.
-<details>
+
 <summary>Click to expand</summary>
 
 ### <a id="learning-objectives">Learning Objectives</a>
@@ -203,9 +210,69 @@ There is considerable room for enhancement in my backend development skills. I p
 
 
 ## <a id="features">Features</a>
-A detailed list of features that enhance user interactions.
+Showing in GIFs the features of the website.
 
-#can you write with summary so its easy to read and I can open on click? start with index.html
+- The Landing page
+<details>
+<summary>Click to expand</summary>
+
+![landing](documents/feature1.gif)
+</details> <br>
+
+
+
+- The Registration page
+<details>
+<summary>Click to expand</summary>
+
+![register](documents/feature--register.gif)
+
+</details> <br>
+
+- Request a Band
+
+<details>
+<summary>Click to expand</summary>
+
+![request](documents/request-band.gif)
+
+</details> <br>
+
+- Edit a Band Request
+
+<details>
+<summary>Click to expand</summary>
+
+![edit-band](<documents/editband (1).gif>)
+
+</details> <br>
+
+- Delete a Band Request
+
+<details>
+<summary>Click to expand</summary>
+
+![delete band](documents/deleteband.gif)
+
+</details> <br>
+
+- Like a Band Request
+
+<details>
+<summary>Click to expand</summary>
+
+![like](documents/like-band-request.gif)
+
+</details> <br>
+
+
+
+
+
+
+
+
+
 
 
 ## <a id="technologies">Technologies</a>

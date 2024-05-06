@@ -8,6 +8,7 @@ class ProfileAdmin(admin.ModelAdmin):
         "user",
         "bio",
         "image",
+        
     )
 
 
