@@ -1,27 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lobster&display=swap');
 
 :root {
-    /** Fonts */
+    /** Fonts for the whole project */
     --title: 'Lobster', sans-serif;
     --main-font: 'Lato', sans-serif;
 
 
 
 
-/** Colors */
---background: #3f006a0f;
---blue: #0d6efd;
+/** Root Colors */
 --black: #000;
 --off-white: #f6f6f6;
 --white: #fff;
 --orange: #ffbf50;
---pale-blue:#fffbd3;
+--pale-yellow:#fffbd3;
 --button-red:#c9a19c;
 
 
 
 
-/* Utils */
+/* Box shapes */
 --small-box-shadow: 1px -1px 7px 0 #00000061;
 --border: 1px solid #00000030;
 }
@@ -37,7 +35,7 @@ body {
 
 }
 
-/* Buttons */
+/* Buttons my own created */
 .btn-festival {
     background-color: var(--button-red);
     color: var(--black);
@@ -50,6 +48,7 @@ body {
     color: var(--black);
 }
 
+/*Thh main part of the page with the background image */
 main {
     background-image: url('/static/images/rrbackground50.webp');
     background-size: cover;
@@ -62,7 +61,7 @@ main {
 
 
 
-/* Footer */
+/* Footer ,icons and copywrite part */
 footer {
     flex-shrink: 0;
     background-color: var(--off-white);
@@ -85,7 +84,7 @@ footer {
 
 }
 
-/* Header */
+/* Header both navbar and images */
 .navbar {
     background-color: var(--off-white);
     box-shadow: var(--small-box-shadow);
@@ -121,7 +120,7 @@ img.logo {
     font-weight: 500;
 }
 
-/* Form */
+/* Form the form which often is inside the landingpage box */
 .form {
     width: 60%;
     margin: 3% auto;
@@ -131,12 +130,12 @@ img.logo {
 }
 
 
-/* Landing Page */
+/* Landing Page the main box for the project */
 .landing {
 
     width: 60%;
     margin: 3% auto;
-    background-color: var(--pale-blue);
+    background-color: var(--pale-yellow);
     box-shadow: var(--small-box-shadow);
     border-radius: 5px;
     opacity: 0.9;
@@ -147,7 +146,7 @@ img.logo {
 
 }
 
-/* Bands */
+/* Bands styles */
 
 .card {
     height: 90%;
@@ -181,7 +180,7 @@ img.logo {
     align-items: center;
 }
 
-/* Profile */
+/* Profile styles */
 
 .profile img {
     width: 200px;
@@ -190,9 +189,12 @@ img.logo {
 }
 
 #myModal {
-  margin-top: 250px;
+  margin-top: 140px;
 }
 
+.close:hover {
+    cursor: pointer;
+}
 
 @media screen and (max-width: 600px) {
     .form {
@@ -215,10 +217,11 @@ img.logo {
         width: 100px;
     }
 
+    /* Media queries for the navbar  and text */
 }
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1400px) {
     #navbarNav {
-        margin-left: 0;
+        margin-left: 10px;
     }
 
     .form h1 {
@@ -239,8 +242,17 @@ img.logo {
 
 }
 
+/* Media queries for the footer copyright box */
+
 @media screen and (max-width: 600px) {
     .copyright-jj {
         display: none;
     }
+}
+/* Medai queries for the skeleton image */
+@media screen and (max-width: 1150px) {
+    .skeleton-img {
+        display: none;
+    }
+
 }

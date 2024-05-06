@@ -9,13 +9,11 @@
 
 
 /** Root Colors */
---background: #3f006a0f;
---blue: #0d6efd;
 --black: #000;
 --off-white: #f6f6f6;
 --white: #fff;
 --orange: #ffbf50;
---pale-blue:#fffbd3;
+--pale-yellow:#fffbd3;
 --button-red:#c9a19c;
 
 
@@ -137,7 +135,7 @@ img.logo {
 
     width: 60%;
     margin: 3% auto;
-    background-color: var(--pale-blue);
+    background-color: var(--pale-yellow);
     box-shadow: var(--small-box-shadow);
     border-radius: 5px;
     opacity: 0.9;

@@ -21,6 +21,8 @@ Welcome to Riot Rythm Festival 2024 :studio_microphone:! Here, you'll experience
   - [Assignment Requirements](#assignment-requirements)
   - [Self-Assessment](#self-assessment)
 - [Features](#features)
+  - [Gifs](#gifs)
+  - [Future Features](#future-feature)
 - [Technologies](#technologies)
   - [Language](#language)
   - [Tools](#tools)
@@ -105,14 +107,64 @@ Key Layouts:
 6. **Information Page Layout:** Delivers detailed information about the festival, guidelines for participation, and general FAQs.
 7. **Add Band Layout (Admin Only):** An admin-exclusive layout to input new bands into the system, featuring necessary fields such as band name, genre, and image uploads.
 
-Wireframes Placeholder:
-- [Insert Home Page Wireframe]
-- [Insert Registration/Login Wireframe]
-- [Insert Band Suggestion Wireframe]
-- [Insert Band List Wireframe]
-- [Insert Admin Dashboard Wireframe]
-- [Insert Information Page Wireframe]
-- [Insert Add Band Wireframe] (Admin Only)
+## The Wireframes can be found here:
+
+Home Mobile
+
+<details>
+<summary>Click to expand</summary>
+
+![Home Mobile](<documents/wireframes/Home Mobile.png>)
+
+
+</details>
+
+Home Ipad
+<details>
+<summary>Click to expand</summary>
+
+![Home Ipad](<documents/wireframes/Home Ipad.png>)
+
+</details>
+
+
+Home Laptop
+<details>
+<summary>Click to expand</summary>
+
+![Laptop](<documents/wireframes/Home Laptop.png>)
+
+</details>
+
+Add Band Request Mobile
+
+<details>
+<summary>Click to expand</summary>
+
+![Add Mobile](<documents/wireframes/Add Band Request mobile.png>)
+
+
+</details>
+
+Add Band Request Laptop
+
+<details>
+<summary>Click to expand</summary>
+
+![add laptop](<documents/wireframes/Add Band Request Laptop.png>)
+
+</details>
+
+Add Band Request Ipad
+
+<details>
+<summary>Click to expand</summary>
+
+![alt text](<documents/wireframes/Add Band Request Ipad.png>)
+
+</details>
+
+
 
 These layouts and placeholders will guide the development of the user interface. The wireframes, once created and inserted, will illustrate how each page is structured to facilitate user interactions and administrative tasks, ensuring a seamless experience across the platform.
 
@@ -210,7 +262,11 @@ There is considerable room for enhancement in my backend development skills. I p
 
 
 ## <a id="features">Features</a>
-Showing in GIFs the features of the website.
+
+### <a id="gifs">Gifs</a>
+
+The gifs below show the features of the website.
+
 
 - The Landing page
 <details>
@@ -226,6 +282,15 @@ Showing in GIFs the features of the website.
 <summary>Click to expand</summary>
 
 ![register](documents/feature--register.gif)
+
+</details> <br>
+
+- The Login/Log out page
+
+<details>
+<summary>Click to expand</summary>
+
+![loginout](documents/login-out.gif)
 
 </details> <br>
 
@@ -266,13 +331,35 @@ Showing in GIFs the features of the website.
 </details> <br>
 
 
+- Edit Profile
 
+<details>
+<summary>Click to expand</summary>
 
+![profile](documents/profile.gif)
 
+</details> <br>
 
+- The Admin Panel
 
+Image of the Admin Panel
 
+<details>
+<summary>Click to expand</summary>
 
+![admin](documents/admin.png)
+
+</details> <br>
+
+### <a id="future-feature">Future Features</a>
+
+1. Most liked band shown on the main page. Like a list
+2. Tickets buying system
+3. Schedule of the festival
+4. User been able to create a cosutm schedule
+5. Merchandise store
+6. Music of the bands
+7. Videos of the bands
 
 
 ## <a id="technologies">Technologies</a>
@@ -296,6 +383,7 @@ Development and Maintenance Tools:
 6. **Heroku:** A cloud platform as a service (PaaS) used to deploy the web application, allowing it to be accessed on the internet.
 7. **Lucidchart:** Employed to create and manage the Entity-Relationship Diagram (ERD) that visually represents the database schema.
 8. **Balsamiq:** Used to create wireframes during the design phase, helping to visualize the layout and user interface of the web application before development.
+9. **Cloudinary:** A cloud-based service used to efficiently manage, upload, and deliver images across the web application, enhancing performance and scalability.
 
 ### <a id="frameworks--libraries">Frameworks & Libraries</a>
 Details on the frameworks and libraries integrated into the project:
@@ -305,14 +393,42 @@ Details on the frameworks and libraries integrated into the project:
 
 3. **Python Package Index (PyPI):** Source for all the third-party Django and Python libraries used in the project.
 
-4. **Cloudinary:** A cloud-based service used to efficiently manage, upload, and deliver images across the web application, enhancing performance and scalability.
+
 
 ### <a id="design">Design</a>
-Discussion of the design principles and aesthetics adopted in the project.
+Design of the project:
+- **Color Scheme:** The color scheme is simple and the colors in the boxes and on the buttons are catching colors from the background image.
+
+<details>
+<summary>Click to expand</summary>
+
+![color-scheme](documents/color-scheme.png)
+
+</details> <br>
+
+- **The background image:** The background image is a festival of an audience. Almost in a Riot. I've given it an opacity of 0.5 to make the text more readable.
+
+<details>
+<summary>Click to expand</summary>
+
+![background](documents/rrbackgrounds50.webp)
+
+</details> <br>
+
+- **Typography:** The fonts used are 'Lato' for the body text and 'Lobster' for the festival name.
 
 ## <a id="data-modeling-and-database-design">Data Modeling and Database Design</a>
-### <a id="erd">ERD</a>![ERD Diagram](documents/erd.webp)
 Entity Relationship Diagram showing the database schema.
+
+<details>
+<summary>Click to expand</summary>
+
+### <a id="erd">ERD</a>![ERD Diagram](documents/erd.webp)
+
+</details> <br>
+
+
+
 
 ### <a id="api-integration">API Integration</a>
 ### Cloudinary API
@@ -500,10 +616,25 @@ Detailed procedure for deploying the project on Heroku.
 
 ## <a id="credits">Credits</a>
 ### <a id="content">Content</a>
-Credits for textual and multimedia content used throughout the project.
+The project is inspired by this [Dee Mac Recepie Tutorial](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy)
+
+
+The like model was made by sutying this [Stackoverflow](https://stackoverflow.com/questions/62879957/how-to-implement-a-like-system-in-django-templates) post
+
+To count the likes I followed this [Stackoverflow](https://forum.djangoproject.com/t/get-total-count-of-objects-to-display/13175 ) post
+
+I also used [Django Official Documentation](https://www.djangoproject.com/) to learn more
+
+To collect the static files I followed the Walkthrough project from Code Institute
+
+For translation from swedish to english I somtetimes used Chat GPT from OpenAI
 
 ### <a id="images">Images</a>
-Credits for images used in the project, including sources and copyrights.
+All the images in this project is made by CHat GPT from OpenAI
 
 ### <a id="thank-you">Thank You</a>
-A thank note to everyone who contributed, supported, or guided the project.
+- My Mentor Dick Vlaanderen for the amazing help along the way
+- My Wife and family for the support and understanding
+- Slack community and mainly the Swedish Channel for the love and help. It's truly special
+
+

@@ -35,4 +35,6 @@ class EditProfile(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return super().form_valid(form)
 
     def test_func(self):
-        return self.request.user.id == self.get_object().user.id
+        is_same_user = self.request.user.id == self.get_object().user.id
+        is_admin = self.request.user.is_superuser
+        return is_same_user or is_admin
