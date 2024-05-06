@@ -3,23 +3,35 @@
 {% block title%}Band Requests{% endblock %}
 
 {% block content %}
-<div class="container form p-4 text-center "><h1 >
-    Band Requests
-</h1> <p>Click the images for more detail and to like a request.
-    Click your own bands requests to edit or delete them.
-</p> </div>
+<!-- Container for the heading -->
+<div class="container form p-4 text-center ">
+    <h1>Band Requests</h1>
+    <p>Click the images for more detail and to like a request.
+        Click your own bands requests to edit or delete them.
+    </p>
+</div>
 
+<!-- Container for the band cards -->
 <div class="container d-flex flex-row flex-wrap justify-content-center align-items-center p-4">
     {% for band in bands %}
+        <!-- Link to the band detail page -->
         <a href="{% url 'band_detail' band.pk band.slug %}" class="bands" aria-label="Click to view {{ band.band_name }}">
+            <!-- Band card -->
             <div class=" text-center card m-3" style="width: 18rem;">
+                <!-- Band image -->
                 <img src="{{ band.image.url }}" class="card-img-top " alt="{{ band.image_alt }}">
                 <div class="card-body">
+                    <!-- Band name -->
                     <h2 class="card-title">{{ band.band_name }}</h2>
+                    <!-- Band genre -->
                     <p class="card-text">{{ band.genre_choices }}</p>
+                    <!-- Band description -->
                     <p class="card-text"><strong>Decription:</strong>  {{ band.description|safe|truncatechars:50 }}</p>
+                    <!-- Band motivation -->
                     <p class="card-text"><strong>Motivation:</strong>  {{ band.motivation|safe|truncatechars:50 }}</p>
+                    <!-- Band added by -->
                     <p class="card-text"> <strong>Added By:</strong>  {{ band.user.username }}</p>
+                    <!-- Band added on -->
                     <p class="card-text pb-4"> <strong>Added On:</strong>  {{ band.request_date|date:"F j, Y" }}</p>
                 </div>
             </div>

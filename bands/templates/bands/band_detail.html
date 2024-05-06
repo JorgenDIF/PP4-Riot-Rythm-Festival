@@ -3,12 +3,13 @@
 {% block title %}{Band Detail - {band.band_name }}{% endblock %}
 
 {% block content %}
+ <!-- Band details -->
 <div class="landing container">
     <div class="band-info m-3 p-1">
         <div class="band-img">
             <img src="{{ band.image.url }}" alt="{{ band.image_alt }}">
-
         </div>
+
         <div class="form band-details text-center pb-2">
             <h1 class ="mt-2">{{ band.band_name }}</h1>
             <p class="p-2">❤️ Likes: {{ band.count_likes }}</p>
@@ -18,14 +19,21 @@
             <p class="p-2"><strong>Description: </strong>{{ band.description|safe }}</p>
             <p class="p-2"><strong>Motivation: </strong>{{ band.motivation|safe }}</p>
 
+            <!-- Form to like the band request -->
             <form method="post" action="{% url 'like_band' pk=band.pk slug=band.slug %}">
                 {% csrf_token %}
                 <button class="btn btn-festival" type="submit">❤️ Like this band Request</button>
             </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
 
             {% if request.user.is_superuser or band.user == request.user %}
             <div class="text-center">
+                <!-- Edit button for superusers or the band owner -->
                 <a href="{% url 'edit_band' band.pk band.slug %}" class="btn btn-festival w-20 mt-1">Edit</a>
+                <!-- Delete button for superusers or the band owner -->
                 <a href="{% url 'delete_band' band.pk band.slug %}" class="btn btn-festival w-20 mt-1">Delete</a>
             </div>
             {% endif %}

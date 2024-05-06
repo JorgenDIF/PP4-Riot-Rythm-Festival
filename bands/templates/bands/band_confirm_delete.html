@@ -4,15 +4,14 @@
 
 {% block content %}
 <div class="container">
-    <h1 class="text-center mt-2">Confirm Bande Deltion</h1>
+    <h1 class="text-center mt-2">Confirm Band Deletion</h1>
     <div class="d-flex justify-content-center pt-3"></div>
     <form method="post" class="text-center">
         {% csrf_token %}
+        <!-- Display a confirmation message -->
         <p>Are you sure you want to delete <strong>{{ object.title }}</strong>?</p>
+        <!-- Add a submit button to confirm the deletion -->
         <input type="submit" value="Confirm" class=" btn btn-festival w-25">
     </form>
-
 </div>
-
-
 {% endblock %}
