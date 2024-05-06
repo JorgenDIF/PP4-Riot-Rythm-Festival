@@ -5,6 +5,7 @@
 
 
 Welcome to Riot Rythm Festival 2024 :studio_microphone:! Here, you'll experience the ultimate musical freedom and create memories that last a lifetime. You, our beloved attendees, are the ones in control. It's you who will determine which bands will take the stage. The more likes your favorite band receives, the greater their chance to perform. This festival is by fans, for fans. So let's come together and create the perfect music experience! :skull:
+Link to the live site: [Riot Rythm Festival 2024](https://riotrythm24-feae0f4dbd60.herokuapp.com/)
 
 ## Table of Contents
 - [Introduction](#introduction)
