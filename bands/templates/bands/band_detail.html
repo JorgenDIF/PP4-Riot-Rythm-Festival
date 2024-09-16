@@ -1,9 +1,8 @@
 {% extends "base.html" %}
 
-{% block title %}{Band Detail - {band.band_name }}{% endblock %}
+{% block title %}Band Detail - {{ band.band_name }}{% endblock %}
 
 {% block content %}
- <!-- Band details -->
 <div class="landing container">
     <div class="band-info m-3 p-1">
         <div class="band-img">
@@ -11,7 +10,7 @@
         </div>
 
         <div class="form band-details text-center pb-2">
-            <h1 class ="mt-2">{{ band.band_name }}</h1>
+            <h1 class="mt-2">{{ band.band_name }}</h1>
             <p class="p-2">❤️ Likes: {{ band.count_likes }}</p>
             <p class="p-2"><strong>Genre: </strong>{{ band.genre_choices }}</p>
             <p class="p-2"><strong>DD Date: </strong> {{ band.request_date|date:"F j, Y" }}</p>
@@ -26,20 +25,17 @@
             </form>
         </div>
     </div>
-</div>
-{% endblock %}
 
-            {% if request.user.is_superuser or band.user == request.user %}
-            <div class="text-center">
-                <!-- Edit button for superusers or the band owner -->
-                <a href="{% url 'edit_band' band.pk band.slug %}" class="btn btn-festival w-20 mt-1">Edit</a>
-                <!-- Delete button for superusers or the band owner -->
-                <a href="{% url 'delete_band' band.pk band.slug %}" class="btn btn-festival w-20 mt-1">Delete</a>
-            </div>
-            {% endif %}
-        </div>
+    {% if request.user.is_superuser or band.user == request.user %}
+    <div class="text-center">
+        <!-- Edit button for superusers or the band owner -->
+        <a href="{% url 'edit_band' band.pk band.slug %}" class="btn btn-festival w-20 mt-1">Edit</a>
+        <!-- Delete button for superusers or the band owner -->
+        <a href="{% url 'delete_band' band.pk band.slug %}" class="btn btn-festival w-20 mt-1">Delete</a>
     </div>
+    {% endif %}
 </div>
-
 {% endblock %}
+
+
 
